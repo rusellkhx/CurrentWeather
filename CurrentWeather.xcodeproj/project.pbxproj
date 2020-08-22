@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		425273F124F11119009FD1A0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 425273F024F11119009FD1A0 /* .gitignore */; };
 		425273F324F11474009FD1A0 /* CitiesGroupByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425273F224F11474009FD1A0 /* CitiesGroupByID.swift */; };
+		425273F524F13243009FD1A0 /* ClockByDayWeatherData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425273F424F13243009FD1A0 /* ClockByDayWeatherData2.swift */; };
+		425273F724F1576C009FD1A0 /* StructModelCitiesID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425273F624F1576C009FD1A0 /* StructModelCitiesID.swift */; };
 		428CF4F024E9339300116531 /* NetworkWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CF4EF24E9339300116531 /* NetworkWeatherManager.swift */; };
 		428CF4F224E933B800116531 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CF4F124E933B800116531 /* StorageManager.swift */; };
 		428CF4F524E9344100116531 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CF4F424E9344100116531 /* CurrentWeather.swift */; };
@@ -38,6 +40,8 @@
 		3632A15A83A790EF024D98A6 /* Pods-CurrentWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrentWeather.debug.xcconfig"; path = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		425273F024F11119009FD1A0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		425273F224F11474009FD1A0 /* CitiesGroupByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesGroupByID.swift; sourceTree = "<group>"; };
+		425273F424F13243009FD1A0 /* ClockByDayWeatherData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockByDayWeatherData2.swift; sourceTree = "<group>"; };
+		425273F624F1576C009FD1A0 /* StructModelCitiesID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructModelCitiesID.swift; sourceTree = "<group>"; };
 		428CF4EF24E9339300116531 /* NetworkWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherManager.swift; sourceTree = "<group>"; };
 		428CF4F124E933B800116531 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		428CF4F424E9344100116531 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				428CF4FC24E934CF00116531 /* ClockByDayWeather.swift */,
 				428CF4FE24E934E600116531 /* ClockByDayWeatherData.swift */,
 				425273F224F11474009FD1A0 /* CitiesGroupByID.swift */,
+				425273F424F13243009FD1A0 /* ClockByDayWeatherData2.swift */,
+				425273F624F1576C009FD1A0 /* StructModelCitiesID.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				428CF50624E935D200116531 /* GalleryCollectionView.swift in Sources */,
 				428CF4FD24E934CF00116531 /* ClockByDayWeather.swift in Sources */,
 				428CF50424E9358600116531 /* CitiesTableViewController.swift in Sources */,
+				425273F524F13243009FD1A0 /* ClockByDayWeatherData2.swift in Sources */,
 				428CF4FF24E934E600116531 /* ClockByDayWeatherData.swift in Sources */,
 				42A9B21E24E932970028CBCB /* ViewController+alertController.swift in Sources */,
 				425273F324F11474009FD1A0 /* CitiesGroupByID.swift in Sources */,
@@ -322,6 +329,7 @@
 				428CF4FB24E934AA00116531 /* Cities.swift in Sources */,
 				428CF4F924E9347900116531 /* StructMiniModelWeather.swift in Sources */,
 				428CF4F024E9339300116531 /* NetworkWeatherManager.swift in Sources */,
+				425273F724F1576C009FD1A0 /* StructModelCitiesID.swift in Sources */,
 				42A9B20924E931E90028CBCB /* AppDelegate.swift in Sources */,
 				42A9B20B24E931E90028CBCB /* SceneDelegate.swift in Sources */,
 				428CF50C24E938E400116531 /* Constants.swift in Sources */,

@@ -41,4 +41,11 @@ class StorageManager {
         userDefaults.set(dataCitiy, forKey: cityKey)
     }
     
+    func fetchCitiesIdSepareted() -> String {
+        guard let dataCity = userDefaults.object(forKey: cityKey) as? Data else { return "" }
+        guard let cities = try? JSONDecoder().decode([Cities].self, from: dataCity) else { return "" }
+        let selectedCities = cities.map { $0.id }
+        return selectedCities.joined(separator: ",")
+    }
+    
 }

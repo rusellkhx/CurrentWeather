@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     var units: String = "metric" //по умолчанию градусы цельсия
     var city: String = ""
     
-    
+    private var idCities = ""
+    private var citiesID: CitiesGroupByID?
     // MARK: - IBOutlet property
     @IBOutlet weak var dtLabel: UILabel!
     @IBOutlet weak var backgroungUIImageView: UIImageView!
@@ -48,28 +49,34 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        idCities = StorageManager.shared.fetchCitiesIdSepareted()
+        self.networkWeatherManager.fetchCurrentWeather(forRequestType: .citiesGroupByIDgroup(idCities: idCities, units: self.units))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueCities" {
+            if let citiesTableViewController = segue.destination as? CitiesTableViewController {
+                citiesTableViewController.citiesID = self.citiesID?.listStr
+            }
+        }
+    }
     // MARK: - IBActions
     @IBAction func searchPressed(_ sender: UIButton) {
         self.presentSearchAlertController(withTitle: "Enter city name", message: nil, style: .alert) { [unowned self] city in
             
             self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityName(city: city, units: self.units))
             self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityNameMoreInfo(city: city, units: self.units))
-    
         }
     }
     
     @IBAction func selectedSC(_ sender: UISegmentedControl) {
-        
         units = keySC.selectedSegmentIndex == 0 ? "metric" : "imperial"
         self.typeUnits.text = keySC.selectedSegmentIndex == 0 ? "°C" : "°F"
         self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityName(city: self.cityLabel.text!, units: self.units))
-        
     }
     
     @IBAction func tappedCities(_ sender: Any) {
@@ -80,6 +87,12 @@ class ViewController: UIViewController {
             return
         }
         performSegue(withIdentifier: "SegueCities", sender: nil)
+    }
+    
+    @IBAction func takeCitiesByID(_ sender: Any) {
+        idCities = StorageManager.shared.fetchCitiesIdSepareted()
+        print(idCities)
+        self.networkWeatherManager.fetchCurrentWeather(forRequestType: .citiesGroupByIDgroup(idCities: idCities, units: self.units))
     }
     // MARK: -  @objc
     // Present the Autocomplete view controller when the button is pressed.
@@ -111,6 +124,11 @@ class ViewController: UIViewController {
         networkWeatherManager.onCompletionClockByDayWeather = { [weak self] clockByDayWeather in
             guard let self = self else { return }
             self.updateInterfaceWithClockByDayWeather(weather: clockByDayWeather)
+        }
+        
+        networkWeatherManager.onCompletionCitiesGroupByID = { [weak self] citiesGroupByID in
+            guard let self = self else { return }
+            self.updateInterfaceWithCitiesGroupByID(weather: citiesGroupByID)
         }
         
         // проверка включенности определения местоположения
@@ -154,7 +172,6 @@ class ViewController: UIViewController {
                                       id: weather.idString,
                                       dt: weather.dtStringHourMinute)
                 StorageManager.shared.saveCity(with: citySave)
-                //print(citySave)
             }
         }
     }
@@ -181,6 +198,16 @@ class ViewController: UIViewController {
         case "sun.min.fill": return UIImage(assetIdentifier: .sun)!
         case "cloud.fill": return UIImage(assetIdentifier: .cloud)!
         default: return UIImage(assetIdentifier: .sun)!
+        }
+    }
+    
+    func updateInterfaceWithCitiesGroupByID(weather: CitiesGroupByID) {
+        let queue = DispatchQueue.global(qos: .utility)
+        queue.async {
+            DispatchQueue.main.async {
+                self.citiesID = weather
+                
+            }
         }
     }
 }

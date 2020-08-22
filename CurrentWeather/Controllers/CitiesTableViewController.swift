@@ -10,14 +10,14 @@ import UIKit
 
 class CitiesTableViewController: UITableViewController {
     
+    var networkWeatherManager = NetworkWeatherManager()
+    var citiesID: [ListForDataCitiesGroupByID2]!
     private var cities: [Cities] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.tableFooterView?.isHidden = true
-        
-        
         cities = StorageManager.shared.fetchCities()
     }
     
@@ -26,7 +26,7 @@ class CitiesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        return cities.count//citiesID.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,5 +56,4 @@ class CitiesTableViewController: UITableViewController {
             dismiss(animated: true, completion: nil)
         }
     }
-
 }

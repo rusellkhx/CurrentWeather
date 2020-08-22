@@ -15,10 +15,12 @@ class NetworkWeatherManager {
         case cityName(city: String, units: String)
         case coordinate(latitude: CLLocationDegrees, longititude: CLLocationDegrees, units: String)
         case cityNameMoreInfo(city: String, units: String)
+        case citiesGroupByIDgroup(idCities: String, units: String)
     }
     
     var onCompletionCurrentWeather: ((CurrentWeather) -> Void)?
     var onCompletionClockByDayWeather: ((ClockByDayWeather) -> Void)?
+    var onCompletionCitiesGroupByID: ((CitiesGroupByID) -> Void)?
     
     func fetchCurrentWeather(forRequestType requestType: RequestType) {
         var urlString = " "
@@ -33,6 +35,9 @@ class NetworkWeatherManager {
         case .cityNameMoreInfo(let city, let units):
              urlString = "https://api.openweathermap.org/data/2.5/forecast?q=\(city)&appid=\(apiKey)&units=\(units)"
             performReqestForecast(withURLString: urlString)
+        case .citiesGroupByIDgroup(let idCities, let units):
+            urlString = "https://api.openweathermap.org/data/2.5/group?id=\(idCities)&appid=\(apiKey)&units=\(units)"
+            performReqestWeatherCitiesGroupByID(withURLString: urlString)
         }
         
     }
@@ -40,11 +45,25 @@ class NetworkWeatherManager {
     fileprivate func performReqestWeather(withURLString urlString: String) {
         guard let url = URL(string: urlString) else { return }
             let session = URLSession(configuration: .default)
-        
             let task = session.dataTask(with: url) { data, response, error in
                 if let data = data {
                     if let currentWeather = self.parseJSON(withData: data) {
                         self.onCompletionCurrentWeather?(currentWeather)
+                    }
+                }
+            }
+            task.resume()
+    }
+    
+    fileprivate func performReqestWeatherCitiesGroupByID(withURLString urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    //let dataStr = String(data: data, encoding: .utf8)
+                    if let citiesGroupByID = self.parseJSONCitiesGroupByID(withData: data) {
+                        self.onCompletionCitiesGroupByID?(citiesGroupByID)
+                        print(citiesGroupByID.cnt)
                     }
                 }
             }
@@ -86,6 +105,22 @@ class NetworkWeatherManager {
                 return nil
             }
             return clockByDayWeather
+            
+        } catch let error as NSError {
+                    print(error.localizedDescription)
+        }
+        return nil
+    }
+    
+    fileprivate func parseJSONCitiesGroupByID(withData data: Data) -> CitiesGroupByID? {
+        let decoder = JSONDecoder()
+        do {
+            let citiesGroupByIDdata = try decoder.decode(ClockByDayWeatherData2.self, from: data)
+            guard let citiesGroupByID = CitiesGroupByID(citiesGroupByID: citiesGroupByIDdata) else {
+                return nil
+            }
+            //print(citiesGroupByID.listStr[0].name)
+            return citiesGroupByID
             
         } catch let error as NSError {
                     print(error.localizedDescription)

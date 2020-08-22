@@ -9,10 +9,7 @@
 import Foundation
 
 struct ClockByDayWeatherData: Codable {
-    let list: [List]
-    let cnt: Int
-    
-   
+    let list: [List1]
 }
 // MARK: - City
 struct City: Codable {
@@ -29,13 +26,13 @@ struct Coord: Codable {
 }
 
 // MARK: - List
-struct List: Codable {
+struct List1: Codable {
     let dt: Int
-    let main: MainClass
+    let main: MainClass1
     let weather: [Weather]
-    let clouds: Clouds
-    let wind: Wind
-    let sys: Sys
+    let clouds: Clouds1
+    let wind: Wind1
+    let sys: Sys1
     let dtTxt: String
     let rain: Rain?
 
@@ -47,12 +44,12 @@ struct List: Codable {
 }
 
 // MARK: - Clouds
-struct Clouds: Codable {
+struct Clouds1: Codable {
     let all: Int
 }
 
 // MARK: - MainClass
-struct MainClass: Codable {
+struct MainClass1: Codable {
     let temp, feelsLike, tempMin, tempMax: Double
     let pressure, seaLevel, grndLevel, humidity: Int
     let tempKf: Double
@@ -80,7 +77,7 @@ struct Rain: Codable {
 }
 
 // MARK: - Sys
-struct Sys: Codable {
+struct Sys1: Codable {
     let pod: Pod
 }
 
@@ -96,7 +93,7 @@ enum MainEnum: String, Codable {
 }
 
 // MARK: - Wind
-struct Wind: Codable {
+struct Wind1: Codable {
     let speed: Double
     let deg: Int
 }
