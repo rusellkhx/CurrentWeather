@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var city: String = ""
     
     private var idCities = ""
-    private var citiesID: CitiesGroupByID?
+    private var citiesID: [CurrentModelCitiesID]?
     // MARK: - IBOutlet property
     @IBOutlet weak var dtLabel: UILabel!
     @IBOutlet weak var backgroungUIImageView: UIImageView!
@@ -49,18 +49,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-        idCities = StorageManager.shared.fetchCitiesIdSepareted()
-        self.networkWeatherManager.fetchCurrentWeather(forRequestType: .citiesGroupByIDgroup(idCities: idCities, units: self.units))
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SegueCities" {
             if let citiesTableViewController = segue.destination as? CitiesTableViewController {
-                citiesTableViewController.citiesID = self.citiesID?.listStr
+                citiesTableViewController.citiesID = self.citiesID
             }
         }
     }
@@ -79,20 +73,8 @@ class ViewController: UIViewController {
         self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityName(city: self.cityLabel.text!, units: self.units))
     }
     
-    @IBAction func tappedCities(_ sender: Any) {
-        guard cityLabel.text != nil
-        else {
-            showAlert(with: "Error",
-                      and: "No connection with Firebase")
-            return
-        }
-        performSegue(withIdentifier: "SegueCities", sender: nil)
-    }
-    
     @IBAction func takeCitiesByID(_ sender: Any) {
-        idCities = StorageManager.shared.fetchCitiesIdSepareted()
-        print(idCities)
-        self.networkWeatherManager.fetchCurrentWeather(forRequestType: .citiesGroupByIDgroup(idCities: idCities, units: self.units))
+        
     }
     // MARK: -  @objc
     // Present the Autocomplete view controller when the button is pressed.
@@ -166,12 +148,14 @@ class ViewController: UIViewController {
                 self.dtLabel.text = weather.dtString
                 self.dtTime.text = weather.dtStringHourMinute
                 
-
                 let citySave = Cities(name: weather.cityName,
                                       temperature: weather.temperatureString,
                                       id: weather.idString,
                                       dt: weather.dtStringHourMinute)
                 StorageManager.shared.saveCity(with: citySave)
+                self.idCities = StorageManager.shared.fetchCitiesIdSepareted()
+                print(self.idCities)
+                self.networkWeatherManager.fetchCurrentWeather(forRequestType: .citiesGroupByIDgroup(idCities: self.idCities, units: self.units))
             }
         }
     }
@@ -205,8 +189,7 @@ class ViewController: UIViewController {
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
             DispatchQueue.main.async {
-                self.citiesID = weather
-                
+                self.citiesID = CurrentModelCitiesID.fetchCurrentWeather(weather)
             }
         }
     }

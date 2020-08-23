@@ -41,9 +41,7 @@ struct ClockByDayWeather {
             list[count].temperature = String(format: "%.0f", clockByDayWeather.list[count].main.temp)
             list[count].conditionCode = String(clockByDayWeather.list[count].weather.first!.id)
         }
-
         self.list = list
-       
     }
     
     private func findeIcon(_ code: String) -> String {

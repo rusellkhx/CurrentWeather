@@ -47,5 +47,4 @@ class StorageManager {
         let selectedCities = cities.map { $0.id }
         return selectedCities.joined(separator: ",")
     }
-    
 }

@@ -11,14 +11,14 @@ import UIKit
 class CitiesTableViewController: UITableViewController {
     
     var networkWeatherManager = NetworkWeatherManager()
-    var citiesID: [ListForDataCitiesGroupByID2]!
+    var citiesID: [CurrentModelCitiesID]!
     private var cities: [Cities] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.tableFooterView?.isHidden = true
-        cities = StorageManager.shared.fetchCities()
+        //cities = StorageManager.shared.fetchCities()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,21 +26,22 @@ class CitiesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count//citiesID.count
+        return citiesID.count//cities.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCities", for: indexPath) as! CitiesTableViewCell
-        let city = cities[indexPath.row]
+        let city = citiesID[indexPath.row]
         cell.cityLabel.text = city.name
-        cell.tempInCity.text = city.temperature
+        cell.tempInCity.text = city.temp
         cell.timeLabel.text = city.dt
         return cell
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            cities.remove(at: indexPath.row)
+            //cities.remove(at: indexPath.row)
+            citiesID.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             StorageManager.shared.deleteCity(at: indexPath.row)
         }

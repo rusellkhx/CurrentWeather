@@ -63,7 +63,6 @@ class NetworkWeatherManager {
                     //let dataStr = String(data: data, encoding: .utf8)
                     if let citiesGroupByID = self.parseJSONCitiesGroupByID(withData: data) {
                         self.onCompletionCitiesGroupByID?(citiesGroupByID)
-                        print(citiesGroupByID.cnt)
                     }
                 }
             }
@@ -119,7 +118,6 @@ class NetworkWeatherManager {
             guard let citiesGroupByID = CitiesGroupByID(citiesGroupByID: citiesGroupByIDdata) else {
                 return nil
             }
-            //print(citiesGroupByID.listStr[0].name)
             return citiesGroupByID
             
         } catch let error as NSError {

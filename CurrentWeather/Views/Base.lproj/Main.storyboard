@@ -244,7 +244,6 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="qcJ-vK-b2Q">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="takeCitiesByID:" destination="5n7-fO-dkL" id="5Tu-Lg-Cb2"/>
                                 <segue destination="dWX-m8-32B" kind="show" identifier="SegueCities" id="pB3-V7-DJt"/>
                             </connections>
                         </barButtonItem>

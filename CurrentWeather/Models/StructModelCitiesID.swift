@@ -16,11 +16,13 @@ struct CurrentModelCitiesID {
     static func fetchCurrentWeather(_ lists: CitiesGroupByID) -> [CurrentModelCitiesID] {
         
         var DataCurrentModel = [CurrentModelCitiesID]()
-        for count in 0..<lists.listStr.count {
-            DataCurrentModel.append(CurrentModelCitiesID(dt: String(lists.listStr[count].dt),
-                                                         temp: lists.listStr[count].temperature,
-                                                         name: lists.listStr[count].name))
+        for count in 0..<lists.list.count {
+            DataCurrentModel.append(CurrentModelCitiesID(dt: lists.list[count].dtStr,
+                                                         temp: lists.list[count].temperature,
+                                                         name: lists.list[count].name))
         }
         return DataCurrentModel
     }
 }
+
+
