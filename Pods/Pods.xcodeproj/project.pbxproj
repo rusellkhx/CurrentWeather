@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -29,13 +29,47 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1568E9CF5071648DE2F5327D9C986C65 /* Pods-CurrentWeather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5549E096AAA40C105034931D43DBD /* Pods-CurrentWeather-dummy.m */; };
-		2DBDE3BDC92C38849BB12D9C06A793F0 /* Pods-CurrentWeather-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4755B8B7B852518D2E11E410EE8A0950 /* Pods-CurrentWeather-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		695AA8C128F9CAFADA9ED9501BB0F771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		06D0CEA0173F536C897CE4FDC51E7176 /* AAPlotOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77CDEA5BF9D3BC987F7D7FEE5C183C9 /* AAPlotOptions.swift */; };
+		0ADA4CD02029E589601358405DE143A8 /* AASeriesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B40C0075989A867EFFBA47DB4E322A8 /* AASeriesElement.swift */; };
+		0DAF6E2898984DDC174F5AF842657A3F /* Pods-CurrentWeather-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AD8D4E947FBA3FC9211C2DA98E03461 /* Pods-CurrentWeather-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EBD99FC1674AF2264723B520315F3F8 /* AAChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF68126F374F5940D91EC73C1C061EF /* AAChart.swift */; };
+		17C8672B5B4784FD29C1DB568BD6F9FB /* AASeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974373513E2A3601920AE886438B22BF /* AASeries.swift */; };
+		1C17025950701DE87211D0B4CEE525A7 /* AACrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C5000AB722F723B9E32CF0732F813B /* AACrosshair.swift */; };
+		202857F33DD2709274FD8B31B0039979 /* AAChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C8829875CC0C779D7C2B57AE7C4F5 /* AAChartModel.swift */; };
+		23667B401A965BCC0223EC7072B6F71A /* AALang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB689B6A4346FBDFFF9B558857730BA /* AALang.swift */; };
+		288C4B3404E922A9455BA52A03CFA338 /* AAJSFiles.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D568A470DDC6842329827DA7689B4AA3 /* AAJSFiles.bundle */; };
+		2B8CC98EA30A048762E669DBBC04D87A /* AALabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B02154F4C9A1D7CB79265C9F505E342 /* AALabels.swift */; };
+		2FFD8D8D5974D170E5192367FBAC5C46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		341B87AF94A91C9CD63071BC9FFBF44E /* AAExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED54386FA19AFB4AA0D852AD94FEF6A9 /* AAExtension.swift */; };
+		40A3B0A8E34367B8A436941460059263 /* AAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788504AF4BE6C3E564F8B8498E4ECBB2 /* AAAnimation.swift */; };
+		48DCBB9CFED1210B45FFBE75E5F86D62 /* AASerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D80556D01CCA301C1391721032AC16B /* AASerializable.swift */; };
+		5E111F037F825623E043F972B76A0A0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		607734BA56D97FA392AAB0550BF014ED /* AACredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349A48B166BD074D67BA5AFF5A4C763 /* AACredits.swift */; };
+		66025305E2650C431BFDB2E1729AAC75 /* AALegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E434108E72E75FD01ABDBAF00CAFE /* AALegend.swift */; };
+		66377093F82711468022337DB0860D4D /* AAXAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCBE8A7FE6364E3D2052A4D9187175 /* AAXAxis.swift */; };
+		6824E84C3AEC3875367BE7A61411397D /* AAPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675D9998B93D92975D116716B67E02B3 /* AAPane.swift */; };
+		68956A50633C9CD805ECA89CCE7DE762 /* AADataLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30179D2BD50DF697A63C8968D1EF92D3 /* AADataLabels.swift */; };
+		6C3076396CA4F12B9C756256EEA14F8F /* AALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C56BB0669524B76F93542FC746C732 /* AALabel.swift */; };
+		776AC60F6F7E0DBED0DA2EEE291F4BBA /* AAInfographics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E405E3880C299AD786E3C751F112D445 /* AAInfographics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84253D3E23ABCDC1C051C7298D3C6272 /* AASubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A433B7FA7E2BFD1F5AEF4B6FF9BBD8 /* AASubtitle.swift */; };
+		85D9DAE24604977D4853A449546012CE /* AATooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB980367726E3ACDF898D959766BD822 /* AATooltip.swift */; };
+		A0305F0C31F8C8B9CEC6DABF3DE95E3B /* AAPlotBandsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E06BC0E5CC24AEDDE229E203A41CE0 /* AAPlotBandsElement.swift */; };
+		A7DDD4CFBA2840E7D60D0839D1CBCEF8 /* AAPlotLinesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D23E70C09451F5E20C6BA295975970 /* AAPlotLinesElement.swift */; };
+		AC3FE9613AD3EBBADA6BE7B0E1F60D90 /* AAGradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8B2349271CFA4C5D184D14562A42E /* AAGradientColor.swift */; };
+		B75C33AD48B9729E487B1FC38CB831A0 /* AAScrollablePlotArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B215A0D56A924796A863BC4F2323301 /* AAScrollablePlotArea.swift */; };
+		C0FEC3DC6791492DDBF2B54645821716 /* Pods-CurrentWeather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F8423F614B2EE33B737F0F77C101B /* Pods-CurrentWeather-dummy.m */; };
+		C303C44204917C719A7D152E6E9BCC82 /* AAYAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A728767E4F480A107B7DCC899C23 /* AAYAxis.swift */; };
+		C3AA310612058298A4D19BA2373D1C1C /* AAInfographics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88478A2F5A6A5E06F28FBA76DAF38C7D /* AAInfographics-dummy.m */; };
+		CD5AC4698A5F41A4C5E2EB138FDFA3AC /* AAStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F238272EA0258A2F865D8F68563A21 /* AAStates.swift */; };
+		D8CE4BFE96CA82F23A4DB1D06896F0D5 /* AAMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65D282739EC5DAF3FE41E703E534F9 /* AAMarker.swift */; };
+		E081F6CA53A18AA3CFB63EE30627B9F5 /* AAOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E352930D1C51B7F58AAD725AB48133 /* AAOptions.swift */; };
+		E2252695B59C4A4E20B1E1A6741C3532 /* AAColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489FA94A05E88DDA6CD0FCC8AA272BE5 /* AAColor.swift */; };
+		EB66EEB17CBD921834375725AF9F817D /* AAChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDA65CB65815C418CC08C7A5D89947 /* AAChartView.swift */; };
+		F9902CCE8A39F646FC9613C5C875AF35 /* AATitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E7AD43D45ED92A886FEBBC0A0B3D57 /* AATitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		41F5C28BCBA8DAD0DD795196AE0B6905 /* PBXContainerItemProxy */ = {
+		50DA5DC2578B80CF22C4C01BC1989AC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -49,134 +83,244 @@
 			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
 			remoteInfo = GoogleMaps;
 		};
-		F5AAE87A76052B2F27E6A768AB1CCE3B /* PBXContainerItemProxy */ = {
+		909E692ED896CEF80CD0E4B0B2BE2F37 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
 			remoteInfo = GooglePlaces;
 		};
+		B0C3892C9DAF423050FEFC740FF73827 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81AB6AA06BE8625CF139234A31B027FE;
+			remoteInfo = AAInfographics;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0387D0F8301DE0539ED1917FF141F424 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
-		11C7E455F83165DC2989012CD8289161 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
-		16E6C226AAA2C81ED3D49F557B100470 /* Pods-CurrentWeather-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CurrentWeather-acknowledgements.plist"; sourceTree = "<group>"; };
+		03FCBE8A7FE6364E3D2052A4D9187175 /* AAXAxis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAXAxis.swift; path = AAInfographics/AAOptionsModel/AAXAxis.swift; sourceTree = "<group>"; };
+		0B215A0D56A924796A863BC4F2323301 /* AAScrollablePlotArea.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAScrollablePlotArea.swift; path = AAInfographics/AAOptionsModel/AAScrollablePlotArea.swift; sourceTree = "<group>"; };
+		12D23E70C09451F5E20C6BA295975970 /* AAPlotLinesElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAPlotLinesElement.swift; path = AAInfographics/AAOptionsModel/AAPlotLinesElement.swift; sourceTree = "<group>"; };
+		1B40C0075989A867EFFBA47DB4E322A8 /* AASeriesElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AASeriesElement.swift; path = AAInfographics/AAChartCreator/AASeriesElement.swift; sourceTree = "<group>"; };
+		2153C8091873EF50127BBE8F4F3A69AD /* AAInfographics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AAInfographics.release.xcconfig; sourceTree = "<group>"; };
+		25C5000AB722F723B9E32CF0732F813B /* AACrosshair.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AACrosshair.swift; path = AAInfographics/AAOptionsModel/AACrosshair.swift; sourceTree = "<group>"; };
+		2D80556D01CCA301C1391721032AC16B /* AASerializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AASerializable.swift; path = AAInfographics/AAChartCreator/AASerializable.swift; sourceTree = "<group>"; };
+		30179D2BD50DF697A63C8968D1EF92D3 /* AADataLabels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AADataLabels.swift; path = AAInfographics/AAOptionsModel/AADataLabels.swift; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		37748102A81403ADD1AC623099B3C411 /* Pods-CurrentWeather-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CurrentWeather-resources.sh"; sourceTree = "<group>"; };
-		3BD591C9BBC443D4FF63087BA04AC14E /* Pods-CurrentWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CurrentWeather.release.xcconfig"; sourceTree = "<group>"; };
-		3FDFC899ED213AFC5FF42B1566BB6428 /* Pods-CurrentWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CurrentWeather.debug.xcconfig"; sourceTree = "<group>"; };
-		40C5549E096AAA40C105034931D43DBD /* Pods-CurrentWeather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CurrentWeather-dummy.m"; sourceTree = "<group>"; };
-		4755B8B7B852518D2E11E410EE8A0950 /* Pods-CurrentWeather-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CurrentWeather-umbrella.h"; sourceTree = "<group>"; };
-		59B291E7857D9987598ACE38F0ED4EE0 /* Pods-CurrentWeather-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CurrentWeather-Info.plist"; sourceTree = "<group>"; };
-		774525773F9EBA13798E2F45CBDA4FE1 /* GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.debug.xcconfig; sourceTree = "<group>"; };
-		9743E59A12C51659AD801D41C1083424 /* Pods-CurrentWeather.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CurrentWeather.modulemap"; sourceTree = "<group>"; };
+		352C8829875CC0C779D7C2B57AE7C4F5 /* AAChartModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAChartModel.swift; path = AAInfographics/AAChartCreator/AAChartModel.swift; sourceTree = "<group>"; };
+		394BEB9B008EB6F8A3B9F9A535BDDF1B /* AAInfographics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AAInfographics-prefix.pch"; sourceTree = "<group>"; };
+		3998D53562440CDED84CDBE3069CB78E /* Pods-CurrentWeather-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CurrentWeather-acknowledgements.plist"; sourceTree = "<group>"; };
+		3AF68126F374F5940D91EC73C1C061EF /* AAChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAChart.swift; path = AAInfographics/AAOptionsModel/AAChart.swift; sourceTree = "<group>"; };
+		3EB689B6A4346FBDFFF9B558857730BA /* AALang.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AALang.swift; path = AAInfographics/AAOptionsModel/AALang.swift; sourceTree = "<group>"; };
+		46E06BC0E5CC24AEDDE229E203A41CE0 /* AAPlotBandsElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAPlotBandsElement.swift; path = AAInfographics/AAOptionsModel/AAPlotBandsElement.swift; sourceTree = "<group>"; };
+		489FA94A05E88DDA6CD0FCC8AA272BE5 /* AAColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAColor.swift; path = AAInfographics/AATool/AAColor.swift; sourceTree = "<group>"; };
+		512A2B37624CCF55A7F50D6E3DA8D410 /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
+		55524A4CBF3A10FFDA40A0ED037721DD /* Pods-CurrentWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CurrentWeather.release.xcconfig"; sourceTree = "<group>"; };
+		58194A7E22497FFC557A43FAC347CCA4 /* Pods-CurrentWeather-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CurrentWeather-Info.plist"; sourceTree = "<group>"; };
+		5B08386E55C8907F0F3E62BDB2A660BD /* AAInfographics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AAInfographics.modulemap; sourceTree = "<group>"; };
+		5F65D282739EC5DAF3FE41E703E534F9 /* AAMarker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAMarker.swift; path = AAInfographics/AAOptionsModel/AAMarker.swift; sourceTree = "<group>"; };
+		618E434108E72E75FD01ABDBAF00CAFE /* AALegend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AALegend.swift; path = AAInfographics/AAOptionsModel/AALegend.swift; sourceTree = "<group>"; };
+		675D9998B93D92975D116716B67E02B3 /* AAPane.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAPane.swift; path = AAInfographics/AAOptionsModel/AAPane.swift; sourceTree = "<group>"; };
+		6A319EE2D75D6A1B28C4BD32068AE69B /* AAInfographics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AAInfographics.debug.xcconfig; sourceTree = "<group>"; };
+		6B7F8423F614B2EE33B737F0F77C101B /* Pods-CurrentWeather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CurrentWeather-dummy.m"; sourceTree = "<group>"; };
+		70A433B7FA7E2BFD1F5AEF4B6FF9BBD8 /* AASubtitle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AASubtitle.swift; path = AAInfographics/AAOptionsModel/AASubtitle.swift; sourceTree = "<group>"; };
+		77DB39978820072FCBA7A6A1013654C1 /* Pods-CurrentWeather-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CurrentWeather-frameworks.sh"; sourceTree = "<group>"; };
+		788504AF4BE6C3E564F8B8498E4ECBB2 /* AAAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAAnimation.swift; path = AAInfographics/AAOptionsModel/AAAnimation.swift; sourceTree = "<group>"; };
+		7ADDA65CB65815C418CC08C7A5D89947 /* AAChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAChartView.swift; path = AAInfographics/AAChartCreator/AAChartView.swift; sourceTree = "<group>"; };
+		7B02154F4C9A1D7CB79265C9F505E342 /* AALabels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AALabels.swift; path = AAInfographics/AAOptionsModel/AALabels.swift; sourceTree = "<group>"; };
+		83630FC755FA30D84E1EDAD5A260A679 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		88478A2F5A6A5E06F28FBA76DAF38C7D /* AAInfographics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AAInfographics-dummy.m"; sourceTree = "<group>"; };
+		888DF37163C2A9242609284C361EE331 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		8AD8D4E947FBA3FC9211C2DA98E03461 /* Pods-CurrentWeather-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CurrentWeather-umbrella.h"; sourceTree = "<group>"; };
+		9349A48B166BD074D67BA5AFF5A4C763 /* AACredits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AACredits.swift; path = AAInfographics/AAOptionsModel/AACredits.swift; sourceTree = "<group>"; };
+		974373513E2A3601920AE886438B22BF /* AASeries.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AASeries.swift; path = AAInfographics/AAOptionsModel/AASeries.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A523A7F3538A06A7FE3314DBF8E8E376 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
-		A7A05BA25648BE85D23F1C4F1769D884 /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
+		9E7253F208A9A7BF00034883B85F5EB9 /* GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.debug.xcconfig; sourceTree = "<group>"; };
+		A0C56BB0669524B76F93542FC746C732 /* AALabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AALabel.swift; path = AAInfographics/AAOptionsModel/AALabel.swift; sourceTree = "<group>"; };
+		AC97BA841576400797F1AABCEFAFDF33 /* Pods-CurrentWeather-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CurrentWeather-resources.sh"; sourceTree = "<group>"; };
+		AE2045B176DBA6EEBA750D813F04DDAD /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
 		AEE950D38B4E4DEE6CBC4D7D19E5FB9E /* Pods_CurrentWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CurrentWeather.framework; path = "Pods-CurrentWeather.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB510BA836AB1A1C43FCC0F6A4563E6B /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
-		DECC4D4CF40D961E7CBA48514DD2F795 /* Pods-CurrentWeather-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CurrentWeather-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F5CEA50417DBA8E050FEB8279CADADE2 /* GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.release.xcconfig; sourceTree = "<group>"; };
+		B2F238272EA0258A2F865D8F68563A21 /* AAStates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAStates.swift; path = AAInfographics/AAOptionsModel/AAStates.swift; sourceTree = "<group>"; };
+		B4CC04D237B0C03DD613F196F04DD8D8 /* Pods-CurrentWeather.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CurrentWeather.modulemap"; sourceTree = "<group>"; };
+		C4E7AD43D45ED92A886FEBBC0A0B3D57 /* AATitle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AATitle.swift; path = AAInfographics/AAOptionsModel/AATitle.swift; sourceTree = "<group>"; };
+		C77CDEA5BF9D3BC987F7D7FEE5C183C9 /* AAPlotOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAPlotOptions.swift; path = AAInfographics/AAOptionsModel/AAPlotOptions.swift; sourceTree = "<group>"; };
+		D205A728767E4F480A107B7DCC899C23 /* AAYAxis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAYAxis.swift; path = AAInfographics/AAOptionsModel/AAYAxis.swift; sourceTree = "<group>"; };
+		D568A470DDC6842329827DA7689B4AA3 /* AAJSFiles.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AAJSFiles.bundle; path = AAInfographics/AAJSFiles.bundle; sourceTree = "<group>"; };
+		D6CCB9D258E15D810E80DB9950E2B5AC /* AAInfographics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AAInfographics.framework; path = AAInfographics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB980367726E3ACDF898D959766BD822 /* AATooltip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AATooltip.swift; path = AAInfographics/AAOptionsModel/AATooltip.swift; sourceTree = "<group>"; };
+		E0E352930D1C51B7F58AAD725AB48133 /* AAOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAOptions.swift; path = AAInfographics/AAChartCreator/AAOptions.swift; sourceTree = "<group>"; };
+		E405E3880C299AD786E3C751F112D445 /* AAInfographics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AAInfographics-umbrella.h"; sourceTree = "<group>"; };
+		E54AA2F584268F15CEEC67C614166CBF /* Pods-CurrentWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CurrentWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		E6B40E72F51B2074A067FBF547FD191D /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		EA5270FE627344E309D5CF75E6E44EA4 /* AAInfographics-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AAInfographics-Info.plist"; sourceTree = "<group>"; };
+		ED54386FA19AFB4AA0D852AD94FEF6A9 /* AAExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAExtension.swift; path = AAInfographics/AATool/AAExtension.swift; sourceTree = "<group>"; };
+		F2C8B2349271CFA4C5D184D14562A42E /* AAGradientColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AAGradientColor.swift; path = AAInfographics/AATool/AAGradientColor.swift; sourceTree = "<group>"; };
+		F4FF74F7AAE1B2D133CD6234A5105E3D /* Pods-CurrentWeather-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CurrentWeather-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F6674A13333230B6B3E89FD73EF024D0 /* GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0BA41CB5EE138E019A01F0D51477CCAA /* Frameworks */ = {
+		59F519D6D5E6B34DBFC260E509DC5D84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				695AA8C128F9CAFADA9ED9501BB0F771 /* Foundation.framework in Frameworks */,
+				2FFD8D8D5974D170E5192367FBAC5C46 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6486492B6A85C416629497E6CE52C47C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E111F037F825623E043F972B76A0A0A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0337EE63AF4C45D52AF790FCCEF55B27 /* Frameworks */ = {
+		16D5A61F5D076DF73C42453C9E0C31FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				11C7E455F83165DC2989012CD8289161 /* GoogleMapsBase.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		229CB5AF55F55DBD016D6043ECFD180A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A747ABA1F6AB719B534BE7153852D35D /* GoogleMaps */,
-				2F24F28B4C0E7554F8800CA4FE9A03B1 /* GooglePlaces */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		2F24F28B4C0E7554F8800CA4FE9A03B1 /* GooglePlaces */ = {
-			isa = PBXGroup;
-			children = (
-				BE3154675BA1329290B4558DDE775B5C /* Frameworks */,
-				983E5EAF5838106CF39CD31F58206BA4 /* Resources */,
-				F2B3E5C9F8F3A362CD55084D4BFA8056 /* Support Files */,
-			);
-			name = GooglePlaces;
-			path = GooglePlaces;
-			sourceTree = "<group>";
-		};
-		8F36DB28E34777FD523E4A56923B65C4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AEE950D38B4E4DEE6CBC4D7D19E5FB9E /* Pods_CurrentWeather.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		97C983B9785B4E550F63BBFD0F2C96AA /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BC7EC410811C5CAC72EDDCC33B2FFD9B /* Pods-CurrentWeather */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		983E5EAF5838106CF39CD31F58206BA4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A523A7F3538A06A7FE3314DBF8E8E376 /* GooglePlaces.bundle */,
+				D568A470DDC6842329827DA7689B4AA3 /* AAJSFiles.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		A747ABA1F6AB719B534BE7153852D35D /* GoogleMaps */ = {
+		2B9CE067582E0DD05FCDC63CBEC291F7 /* AAInfographics */ = {
 			isa = PBXGroup;
 			children = (
-				C67372CB00A3661CD9792ABE9BAD2C39 /* Base */,
-				C2859F6104DE714C6A87E40F1C1F34E6 /* Support Files */,
+				788504AF4BE6C3E564F8B8498E4ECBB2 /* AAAnimation.swift */,
+				3AF68126F374F5940D91EC73C1C061EF /* AAChart.swift */,
+				352C8829875CC0C779D7C2B57AE7C4F5 /* AAChartModel.swift */,
+				7ADDA65CB65815C418CC08C7A5D89947 /* AAChartView.swift */,
+				489FA94A05E88DDA6CD0FCC8AA272BE5 /* AAColor.swift */,
+				9349A48B166BD074D67BA5AFF5A4C763 /* AACredits.swift */,
+				25C5000AB722F723B9E32CF0732F813B /* AACrosshair.swift */,
+				30179D2BD50DF697A63C8968D1EF92D3 /* AADataLabels.swift */,
+				ED54386FA19AFB4AA0D852AD94FEF6A9 /* AAExtension.swift */,
+				F2C8B2349271CFA4C5D184D14562A42E /* AAGradientColor.swift */,
+				A0C56BB0669524B76F93542FC746C732 /* AALabel.swift */,
+				7B02154F4C9A1D7CB79265C9F505E342 /* AALabels.swift */,
+				3EB689B6A4346FBDFFF9B558857730BA /* AALang.swift */,
+				618E434108E72E75FD01ABDBAF00CAFE /* AALegend.swift */,
+				5F65D282739EC5DAF3FE41E703E534F9 /* AAMarker.swift */,
+				E0E352930D1C51B7F58AAD725AB48133 /* AAOptions.swift */,
+				675D9998B93D92975D116716B67E02B3 /* AAPane.swift */,
+				46E06BC0E5CC24AEDDE229E203A41CE0 /* AAPlotBandsElement.swift */,
+				12D23E70C09451F5E20C6BA295975970 /* AAPlotLinesElement.swift */,
+				C77CDEA5BF9D3BC987F7D7FEE5C183C9 /* AAPlotOptions.swift */,
+				0B215A0D56A924796A863BC4F2323301 /* AAScrollablePlotArea.swift */,
+				2D80556D01CCA301C1391721032AC16B /* AASerializable.swift */,
+				974373513E2A3601920AE886438B22BF /* AASeries.swift */,
+				1B40C0075989A867EFFBA47DB4E322A8 /* AASeriesElement.swift */,
+				B2F238272EA0258A2F865D8F68563A21 /* AAStates.swift */,
+				70A433B7FA7E2BFD1F5AEF4B6FF9BBD8 /* AASubtitle.swift */,
+				C4E7AD43D45ED92A886FEBBC0A0B3D57 /* AATitle.swift */,
+				DB980367726E3ACDF898D959766BD822 /* AATooltip.swift */,
+				03FCBE8A7FE6364E3D2052A4D9187175 /* AAXAxis.swift */,
+				D205A728767E4F480A107B7DCC899C23 /* AAYAxis.swift */,
+				16D5A61F5D076DF73C42453C9E0C31FF /* Resources */,
+				986B5F815069F680354BC523BEF1EF5B /* Support Files */,
 			);
-			name = GoogleMaps;
-			path = GoogleMaps;
+			name = AAInfographics;
+			path = AAInfographics;
 			sourceTree = "<group>";
 		};
-		BC7EC410811C5CAC72EDDCC33B2FFD9B /* Pods-CurrentWeather */ = {
+		522AD54973D5482867092B0E207F9097 /* Pods-CurrentWeather */ = {
 			isa = PBXGroup;
 			children = (
-				9743E59A12C51659AD801D41C1083424 /* Pods-CurrentWeather.modulemap */,
-				DECC4D4CF40D961E7CBA48514DD2F795 /* Pods-CurrentWeather-acknowledgements.markdown */,
-				16E6C226AAA2C81ED3D49F557B100470 /* Pods-CurrentWeather-acknowledgements.plist */,
-				40C5549E096AAA40C105034931D43DBD /* Pods-CurrentWeather-dummy.m */,
-				59B291E7857D9987598ACE38F0ED4EE0 /* Pods-CurrentWeather-Info.plist */,
-				37748102A81403ADD1AC623099B3C411 /* Pods-CurrentWeather-resources.sh */,
-				4755B8B7B852518D2E11E410EE8A0950 /* Pods-CurrentWeather-umbrella.h */,
-				3FDFC899ED213AFC5FF42B1566BB6428 /* Pods-CurrentWeather.debug.xcconfig */,
-				3BD591C9BBC443D4FF63087BA04AC14E /* Pods-CurrentWeather.release.xcconfig */,
+				B4CC04D237B0C03DD613F196F04DD8D8 /* Pods-CurrentWeather.modulemap */,
+				F4FF74F7AAE1B2D133CD6234A5105E3D /* Pods-CurrentWeather-acknowledgements.markdown */,
+				3998D53562440CDED84CDBE3069CB78E /* Pods-CurrentWeather-acknowledgements.plist */,
+				6B7F8423F614B2EE33B737F0F77C101B /* Pods-CurrentWeather-dummy.m */,
+				77DB39978820072FCBA7A6A1013654C1 /* Pods-CurrentWeather-frameworks.sh */,
+				58194A7E22497FFC557A43FAC347CCA4 /* Pods-CurrentWeather-Info.plist */,
+				AC97BA841576400797F1AABCEFAFDF33 /* Pods-CurrentWeather-resources.sh */,
+				8AD8D4E947FBA3FC9211C2DA98E03461 /* Pods-CurrentWeather-umbrella.h */,
+				E54AA2F584268F15CEEC67C614166CBF /* Pods-CurrentWeather.debug.xcconfig */,
+				55524A4CBF3A10FFDA40A0ED037721DD /* Pods-CurrentWeather.release.xcconfig */,
 			);
 			name = "Pods-CurrentWeather";
 			path = "Target Support Files/Pods-CurrentWeather";
 			sourceTree = "<group>";
 		};
-		BE3154675BA1329290B4558DDE775B5C /* Frameworks */ = {
+		5A873D32578F2E297D3D13086FD36E02 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0387D0F8301DE0539ED1917FF141F424 /* GooglePlaces.framework */,
+				888DF37163C2A9242609284C361EE331 /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6F3DEF20E5B550EE25CAD3CFFEE0F04C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6B40E72F51B2074A067FBF547FD191D /* GooglePlaces.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		850334D1B1F61E282ADB165499247B79 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9E7253F208A9A7BF00034883B85F5EB9 /* GoogleMaps.debug.xcconfig */,
+				F6674A13333230B6B3E89FD73EF024D0 /* GoogleMaps.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleMaps";
+			sourceTree = "<group>";
+		};
+		986B5F815069F680354BC523BEF1EF5B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B08386E55C8907F0F3E62BDB2A660BD /* AAInfographics.modulemap */,
+				88478A2F5A6A5E06F28FBA76DAF38C7D /* AAInfographics-dummy.m */,
+				EA5270FE627344E309D5CF75E6E44EA4 /* AAInfographics-Info.plist */,
+				394BEB9B008EB6F8A3B9F9A535BDDF1B /* AAInfographics-prefix.pch */,
+				E405E3880C299AD786E3C751F112D445 /* AAInfographics-umbrella.h */,
+				6A319EE2D75D6A1B28C4BD32068AE69B /* AAInfographics.debug.xcconfig */,
+				2153C8091873EF50127BBE8F4F3A69AD /* AAInfographics.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AAInfographics";
+			sourceTree = "<group>";
+		};
+		99E5627EA42AB0356C8C3FB22FE6B06D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83630FC755FA30D84E1EDAD5A260A679 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AFA2F4296DD44520AD213269AD5456C7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				522AD54973D5482867092B0E207F9097 /* Pods-CurrentWeather */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B058E48A0CCCDAA9A7580248B3FB4B9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6CCB9D258E15D810E80DB9950E2B5AC /* AAInfographics.framework */,
+				AEE950D38B4E4DEE6CBC4D7D19E5FB9E /* Pods_CurrentWeather.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD0506519E6D44231CD651BAC53F5184 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE2045B176DBA6EEBA750D813F04DDAD /* GooglePlaces.debug.xcconfig */,
+				512A2B37624CCF55A7F50D6E3DA8D410 /* GooglePlaces.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GooglePlaces";
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -187,22 +331,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C2859F6104DE714C6A87E40F1C1F34E6 /* Support Files */ = {
+		C6472E5C77699CB049BB835FC9DED1A5 /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				774525773F9EBA13798E2F45CBDA4FE1 /* GoogleMaps.debug.xcconfig */,
-				F5CEA50417DBA8E050FEB8279CADADE2 /* GoogleMaps.release.xcconfig */,
+				6F3DEF20E5B550EE25CAD3CFFEE0F04C /* Frameworks */,
+				5A873D32578F2E297D3D13086FD36E02 /* Resources */,
+				BD0506519E6D44231CD651BAC53F5184 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleMaps";
-			sourceTree = "<group>";
-		};
-		C67372CB00A3661CD9792ABE9BAD2C39 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				0337EE63AF4C45D52AF790FCCEF55B27 /* Frameworks */,
-			);
-			name = Base;
+			name = GooglePlaces;
+			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -210,9 +347,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				229CB5AF55F55DBD016D6043ECFD180A /* Pods */,
-				8F36DB28E34777FD523E4A56923B65C4 /* Products */,
-				97C983B9785B4E550F63BBFD0F2C96AA /* Targets Support Files */,
+				D8B73C145C4BA2252A18B1D5ACFE1D80 /* Pods */,
+				B058E48A0CCCDAA9A7580248B3FB4B9B /* Products */,
+				AFA2F4296DD44520AD213269AD5456C7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,24 +361,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F2B3E5C9F8F3A362CD55084D4BFA8056 /* Support Files */ = {
+		D6DAC95EB0319C158A825CC75856E277 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A7A05BA25648BE85D23F1C4F1769D884 /* GooglePlaces.debug.xcconfig */,
-				DB510BA836AB1A1C43FCC0F6A4563E6B /* GooglePlaces.release.xcconfig */,
+				99E5627EA42AB0356C8C3FB22FE6B06D /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GooglePlaces";
+			name = Base;
+			sourceTree = "<group>";
+		};
+		D8B73C145C4BA2252A18B1D5ACFE1D80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B9CE067582E0DD05FCDC63CBEC291F7 /* AAInfographics */,
+				FDAC0858C6B22C4E93EED7FBB1E27431 /* GoogleMaps */,
+				C6472E5C77699CB049BB835FC9DED1A5 /* GooglePlaces */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FDAC0858C6B22C4E93EED7FBB1E27431 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				D6DAC95EB0319C158A825CC75856E277 /* Base */,
+				850334D1B1F61E282ADB165499247B79 /* Support Files */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		15D726C09CB8905842F9BEF2F2239B11 /* Headers */ = {
+		861DFB44B23B00597ABB0437A1D1ABEE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DBDE3BDC92C38849BB12D9C06A793F0 /* Pods-CurrentWeather-umbrella.h in Headers */,
+				0DAF6E2898984DDC174F5AF842657A3F /* Pods-CurrentWeather-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F17174CD7916B11DD6B9F79C71959D32 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				776AC60F6F7E0DBED0DA2EEE291F4BBA /* AAInfographics-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,22 +413,41 @@
 /* Begin PBXNativeTarget section */
 		243CCEEF604966544D5AF316EA939541 /* Pods-CurrentWeather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30F4A13096AD5D2C28A97AF0454ECFE4 /* Build configuration list for PBXNativeTarget "Pods-CurrentWeather" */;
+			buildConfigurationList = D1C743E35C1D9E0E30E76E7FB2D69C80 /* Build configuration list for PBXNativeTarget "Pods-CurrentWeather" */;
 			buildPhases = (
-				15D726C09CB8905842F9BEF2F2239B11 /* Headers */,
-				3933BA1466043F843C9B7634F5BA9E2F /* Sources */,
-				0BA41CB5EE138E019A01F0D51477CCAA /* Frameworks */,
-				9A4E1B7F02792556ACF7964D9CCEE00C /* Resources */,
+				861DFB44B23B00597ABB0437A1D1ABEE /* Headers */,
+				32D10C1489655AD4E31C148BCC832231 /* Sources */,
+				6486492B6A85C416629497E6CE52C47C /* Frameworks */,
+				34523DE7F98EE23483173A17A234B75F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FE0CB7A33C2A7DA096998980E512FBE2 /* PBXTargetDependency */,
-				3F69FC8B2624A9DC40CF2FF3918B96F9 /* PBXTargetDependency */,
+				7623BBC6885EF0098944C3CCC4FFF618 /* PBXTargetDependency */,
+				EBAC43FD6B5A37CFF5FB0D4A3CE3ED7A /* PBXTargetDependency */,
+				C72D46536AB4CFEAFC1F0E5B9A354984 /* PBXTargetDependency */,
 			);
 			name = "Pods-CurrentWeather";
 			productName = "Pods-CurrentWeather";
 			productReference = AEE950D38B4E4DEE6CBC4D7D19E5FB9E /* Pods_CurrentWeather.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		81AB6AA06BE8625CF139234A31B027FE /* AAInfographics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29A571B4095F3A7844C813DEFDF54C0A /* Build configuration list for PBXNativeTarget "AAInfographics" */;
+			buildPhases = (
+				F17174CD7916B11DD6B9F79C71959D32 /* Headers */,
+				CACED079FA386EC485E0323774F8DBDF /* Sources */,
+				59F519D6D5E6B34DBFC260E509DC5D84 /* Frameworks */,
+				F7C7DDE7853AD605791EBB23894FF68A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AAInfographics;
+			productName = AAInfographics;
+			productReference = D6CCB9D258E15D810E80DB9950E2B5AC /* AAInfographics.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -278,7 +460,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -286,10 +468,11 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 8F36DB28E34777FD523E4A56923B65C4 /* Products */;
+			productRefGroup = B058E48A0CCCDAA9A7580248B3FB4B9B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				81AB6AA06BE8625CF139234A31B027FE /* AAInfographics */,
 				E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */,
 				0C1885900810601510E0C632060FAF26 /* GooglePlaces */,
 				243CCEEF604966544D5AF316EA939541 /* Pods-CurrentWeather */,
@@ -298,32 +481,84 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9A4E1B7F02792556ACF7964D9CCEE00C /* Resources */ = {
+		34523DE7F98EE23483173A17A234B75F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7C7DDE7853AD605791EBB23894FF68A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				288C4B3404E922A9455BA52A03CFA338 /* AAJSFiles.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3933BA1466043F843C9B7634F5BA9E2F /* Sources */ = {
+		32D10C1489655AD4E31C148BCC832231 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1568E9CF5071648DE2F5327D9C986C65 /* Pods-CurrentWeather-dummy.m in Sources */,
+				C0FEC3DC6791492DDBF2B54645821716 /* Pods-CurrentWeather-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACED079FA386EC485E0323774F8DBDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A3B0A8E34367B8A436941460059263 /* AAAnimation.swift in Sources */,
+				0EBD99FC1674AF2264723B520315F3F8 /* AAChart.swift in Sources */,
+				202857F33DD2709274FD8B31B0039979 /* AAChartModel.swift in Sources */,
+				EB66EEB17CBD921834375725AF9F817D /* AAChartView.swift in Sources */,
+				E2252695B59C4A4E20B1E1A6741C3532 /* AAColor.swift in Sources */,
+				607734BA56D97FA392AAB0550BF014ED /* AACredits.swift in Sources */,
+				1C17025950701DE87211D0B4CEE525A7 /* AACrosshair.swift in Sources */,
+				68956A50633C9CD805ECA89CCE7DE762 /* AADataLabels.swift in Sources */,
+				341B87AF94A91C9CD63071BC9FFBF44E /* AAExtension.swift in Sources */,
+				AC3FE9613AD3EBBADA6BE7B0E1F60D90 /* AAGradientColor.swift in Sources */,
+				C3AA310612058298A4D19BA2373D1C1C /* AAInfographics-dummy.m in Sources */,
+				6C3076396CA4F12B9C756256EEA14F8F /* AALabel.swift in Sources */,
+				2B8CC98EA30A048762E669DBBC04D87A /* AALabels.swift in Sources */,
+				23667B401A965BCC0223EC7072B6F71A /* AALang.swift in Sources */,
+				66025305E2650C431BFDB2E1729AAC75 /* AALegend.swift in Sources */,
+				D8CE4BFE96CA82F23A4DB1D06896F0D5 /* AAMarker.swift in Sources */,
+				E081F6CA53A18AA3CFB63EE30627B9F5 /* AAOptions.swift in Sources */,
+				6824E84C3AEC3875367BE7A61411397D /* AAPane.swift in Sources */,
+				A0305F0C31F8C8B9CEC6DABF3DE95E3B /* AAPlotBandsElement.swift in Sources */,
+				A7DDD4CFBA2840E7D60D0839D1CBCEF8 /* AAPlotLinesElement.swift in Sources */,
+				06D0CEA0173F536C897CE4FDC51E7176 /* AAPlotOptions.swift in Sources */,
+				B75C33AD48B9729E487B1FC38CB831A0 /* AAScrollablePlotArea.swift in Sources */,
+				48DCBB9CFED1210B45FFBE75E5F86D62 /* AASerializable.swift in Sources */,
+				17C8672B5B4784FD29C1DB568BD6F9FB /* AASeries.swift in Sources */,
+				0ADA4CD02029E589601358405DE143A8 /* AASeriesElement.swift in Sources */,
+				CD5AC4698A5F41A4C5E2EB138FDFA3AC /* AAStates.swift in Sources */,
+				84253D3E23ABCDC1C051C7298D3C6272 /* AASubtitle.swift in Sources */,
+				F9902CCE8A39F646FC9613C5C875AF35 /* AATitle.swift in Sources */,
+				85D9DAE24604977D4853A449546012CE /* AATooltip.swift in Sources */,
+				66377093F82711468022337DB0860D4D /* AAXAxis.swift in Sources */,
+				C303C44204917C719A7D152E6E9BCC82 /* AAYAxis.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3F69FC8B2624A9DC40CF2FF3918B96F9 /* PBXTargetDependency */ = {
+		7623BBC6885EF0098944C3CCC4FFF618 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AAInfographics;
+			target = 81AB6AA06BE8625CF139234A31B027FE /* AAInfographics */;
+			targetProxy = B0C3892C9DAF423050FEFC740FF73827 /* PBXContainerItemProxy */;
+		};
+		C72D46536AB4CFEAFC1F0E5B9A354984 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GooglePlaces;
 			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
-			targetProxy = F5AAE87A76052B2F27E6A768AB1CCE3B /* PBXContainerItemProxy */;
+			targetProxy = 909E692ED896CEF80CD0E4B0B2BE2F37 /* PBXContainerItemProxy */;
 		};
 		D42315111F400C0605ACCD6B5CAF2178 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -331,15 +566,51 @@
 			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
 			targetProxy = 6EB1C2DD30E6564FC3135C9E8002D8F7 /* PBXContainerItemProxy */;
 		};
-		FE0CB7A33C2A7DA096998980E512FBE2 /* PBXTargetDependency */ = {
+		EBAC43FD6B5A37CFF5FB0D4A3CE3ED7A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GoogleMaps;
 			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
-			targetProxy = 41F5C28BCBA8DAD0DD795196AE0B6905 /* PBXContainerItemProxy */;
+			targetProxy = 50DA5DC2578B80CF22C4C01BC1989AC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		10912AB7EC9C15987276101C952F70FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2153C8091873EF50127BBE8F4F3A69AD /* AAInfographics.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AAInfographics/AAInfographics-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AAInfographics/AAInfographics-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AAInfographics/AAInfographics.modulemap";
+				PRODUCT_MODULE_NAME = AAInfographics;
+				PRODUCT_NAME = AAInfographics;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -400,12 +671,10 @@
 			};
 			name = Release;
 		};
-		2391686D78668CBE38AB64C494205FFF /* Debug */ = {
+		143211A4122EEEC726213041B8DFF3AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FDFC899ED213AFC5FF42B1566BB6428 /* Pods-CurrentWeather.debug.xcconfig */;
+			baseConfigurationReference = 6A319EE2D75D6A1B28C4BD32068AE69B /* AAInfographics.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -415,71 +684,31 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/AAInfographics/AAInfographics-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AAInfographics/AAInfographics-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/AAInfographics/AAInfographics.modulemap";
+				PRODUCT_MODULE_NAME = AAInfographics;
+				PRODUCT_NAME = AAInfographics;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		34F3E2DC303FB101610F3E5804103BB4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BD591C9BBC443D4FF63087BA04AC14E /* Pods-CurrentWeather.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		4AE9FC8A852243DC9A2EFE9BA39BAC7B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7A05BA25648BE85D23F1C4F1769D884 /* GooglePlaces.debug.xcconfig */;
+			baseConfigurationReference = AE2045B176DBA6EEBA750D813F04DDAD /* GooglePlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -495,7 +724,7 @@
 		};
 		573B04AB9E058A1911353A22A780E993 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB510BA836AB1A1C43FCC0F6A4563E6B /* GooglePlaces.release.xcconfig */;
+			baseConfigurationReference = 512A2B37624CCF55A7F50D6E3DA8D410 /* GooglePlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -510,9 +739,47 @@
 			};
 			name = Release;
 		};
+		890FE8FBBE4D3D3A4E54834A0606CA58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E54AA2F584268F15CEEC67C614166CBF /* Pods-CurrentWeather.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		8CE5BA3EF4F6FABF028CE30772ECDA11 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5CEA50417DBA8E050FEB8279CADADE2 /* GoogleMaps.release.xcconfig */;
+			baseConfigurationReference = F6674A13333230B6B3E89FD73EF024D0 /* GoogleMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -524,12 +791,51 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B94C825D309D582332F9239DDAC789DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55524A4CBF3A10FFDA40A0ED037721DD /* Pods-CurrentWeather.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 		E1E452060D51DF935547186CE54B26CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 774525773F9EBA13798E2F45CBDA4FE1 /* GoogleMaps.debug.xcconfig */;
+			baseConfigurationReference = 9E7253F208A9A7BF00034883B85F5EB9 /* GoogleMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -610,20 +916,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		29A571B4095F3A7844C813DEFDF54C0A /* Build configuration list for PBXNativeTarget "AAInfographics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				143211A4122EEEC726213041B8DFF3AB /* Debug */,
+				10912AB7EC9C15987276101C952F70FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2FC2AC47FDB0310285CE777F18CD1532 /* Build configuration list for PBXAggregateTarget "GooglePlaces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AE9FC8A852243DC9A2EFE9BA39BAC7B /* Debug */,
 				573B04AB9E058A1911353A22A780E993 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		30F4A13096AD5D2C28A97AF0454ECFE4 /* Build configuration list for PBXNativeTarget "Pods-CurrentWeather" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2391686D78668CBE38AB64C494205FFF /* Debug */,
-				34F3E2DC303FB101610F3E5804103BB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -642,6 +948,15 @@
 			buildConfigurations = (
 				ED7888FA6713EABBF66D26A8003AD1CA /* Debug */,
 				1422B121EAEAEA11307496903FA623C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1C743E35C1D9E0E30E76E7FB2D69C80 /* Build configuration list for PBXNativeTarget "Pods-CurrentWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				890FE8FBBE4D3D3A4E54834A0606CA58 /* Debug */,
+				B94C825D309D582332F9239DDAC789DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

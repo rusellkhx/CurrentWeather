@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 //import Firebase
 import GooglePlaces
-
+import AAInfographics
 class ViewController: UIViewController {
     
     // MARK: - User property
@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var networkWeatherManager = NetworkWeatherManager()
     var units: String = "metric" //по умолчанию градусы цельсия
     var city: String = ""
+    let chartView = AAChartView()
     
     private var idCities = ""
     private var citiesID: [CurrentModelCitiesID]?
@@ -34,8 +35,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var keySC: UISegmentedControl!
     @IBOutlet weak var typeUnits: UILabel!
     @IBOutlet weak var dtTime: UILabel!
+    //@IBOutlet weak var chartView: AAChartView!
     
-     // MARK: - User private/computed property
+    
+    // MARK: - User private/computed property
     lazy var locationManager: CLLocationManager = {
         let lm = CLLocationManager()
         lm.delegate = self //объявили себя делегатом
@@ -45,6 +48,7 @@ class ViewController: UIViewController {
     } ()
     
     private var galleryCollectionView = GalleryCollectionView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,22 +86,59 @@ class ViewController: UIViewController {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         
-        // Specify the place data types to return.
         let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
             UInt(GMSPlaceField.placeID.rawValue))!
         autocompleteController.placeFields = fields
         
-        // Specify a filter.
         let filter = GMSAutocompleteFilter()
         filter.type = .city
         autocompleteController.autocompleteFilter = filter
         
-        // Display the autocomplete view controller.
         present(autocompleteController, animated: true, completion: nil)
+    }
+    // MARK: - Methods
+    func createChartModel(data: ClockByDayWeather) {
+        let aaChartModel = AAChartModel()
+            .chartType(.line)
+            //.animationType(.bounce)
+            .stacking(.normal)
+            .markerSymbol(.circle)
+            .title("TITLE")//The chart title
+            //.subtitle("subtitle")//The chart subtitle
+            .dataLabelsEnabled(false) //Enable or disable the data labels. Defaults to false
+            .tooltipValueSuffix("°")//the value suffix of the chart tooltip
+            .categories(
+                [data.listStr[0].dt,
+                data.listStr[1].dt,
+                data.listStr[2].dt,
+                data.listStr[3].dt,
+                data.listStr[4].dt,
+                data.listStr[5].dt,
+                data.listStr[6].dt,
+                data.listStr[7].dt,
+                data.listStr[8].dt,
+                data.listStr[9].dt,
+                data.listStr[10].dt]
+        )
+            .series([
+                AASeriesElement()
+                    .name("city")
+                    .data([Int(data.listStr[0].dt) ?? 0,
+                           Int(data.listStr[1].dt) ?? 0,
+                           Int(data.listStr[2].dt) ?? 0,
+                           Int(data.listStr[3].dt) ?? 0,
+                           Int(data.listStr[4].dt) ?? 0,
+                           Int(data.listStr[5].dt) ?? 0,
+                           Int(data.listStr[6].dt) ?? 0,
+                           Int(data.listStr[7].dt) ?? 0,
+                           Int(data.listStr[8].dt) ?? 0,
+                           Int(data.listStr[9].dt) ?? 0,
+                           Int(data.listStr[10].dt) ?? 0])
+            ])
         
+        chartView.aa_drawChartWithChartModel(aaChartModel)
     }
     
-    // MARK: - Methods
     func updateView() {
         networkWeatherManager.onCompletionCurrentWeather = { [weak self] currentWeather in
             guard let self = self else { return }
@@ -125,13 +166,22 @@ class ViewController: UIViewController {
         galleryCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         galleryCollectionView.isHidden = true
-        //ref = FirebaseDatabase.Database.database().reference(withPath: "cities").child("city")
         
         getCityGoogle.backgroundColor = .clear
         getCityGoogle.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         getCityGoogle.setTitle("", for: .normal)
         getCityGoogle.addTarget(self, action: #selector(autocompleteClicked), for: .touchUpInside)
         self.view.addSubview(getCityGoogle)
+        
+        let chartViewWidth  = self.view.frame.size.width
+        let chartViewHeight = 100
+        
+        chartView.frame = CGRect(x:0,y:420,width:Int(chartViewWidth),height:chartViewHeight)
+        chartView.tintColor = .none
+        self.view.addSubview(chartView)
+        
+        chartView.isClearBackgroundColor = true
+        chartView.isHidden = true
     }
     
     func updateInterfaceWithCurrentWeather(weather: CurrentWeather) {
@@ -168,6 +218,9 @@ class ViewController: UIViewController {
                 self.galleryCollectionView.set(cells: CurrentModel.fetchCurrentWeather(weather))
                 self.galleryCollectionView.isHidden = false
                 self.galleryCollectionView.reloadData()
+                
+                self.createChartModel(data: weather)
+                self.chartView.isHidden = false
             }
         }
     }
@@ -210,7 +263,6 @@ extension ViewController: CLLocationManagerDelegate, GMSAutocompleteViewControll
         print(error.localizedDescription)
     }
     
-    // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         if let city = place.name {
             self.city = city
@@ -218,28 +270,17 @@ extension ViewController: CLLocationManagerDelegate, GMSAutocompleteViewControll
         
         self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityName(city: self.city, units: self.units))
         self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityNameMoreInfo(city: self.city, units: self.units))
-
+        
         dismiss(animated: true, completion: nil)
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        // TODO: handle the error.
         print("Error: ", error.localizedDescription)
     }
     
-    // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true, completion: nil)
     }
-    
-    // Turn the network activity indicator on and off again.
-    /*func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-    
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }*/
     
 }
 

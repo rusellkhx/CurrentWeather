@@ -1,20 +1,24 @@
 PODS:
+  - AAInfographics (5.0.2)
   - GoogleMaps/Base (3.9.0)
   - GooglePlaces (3.9.0):
     - GoogleMaps/Base (= 3.9.0)
 
 DEPENDENCIES:
+  - AAInfographics
   - GooglePlaces
 
 SPEC REPOS:
   trunk:
+    - AAInfographics
     - GoogleMaps
     - GooglePlaces
 
 SPEC CHECKSUMS:
+  AAInfographics: 5db0503a2dfe5255eba070be4d1ecd90713bd5df
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
   GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
 
-PODFILE CHECKSUM: 7540b1dc42a45d14f7edf1698288d23d3c174c85
+PODFILE CHECKSUM: 0a833eb39d07633ccc1d9c9da47f86af2ffe60e2
 
 COCOAPODS: 1.9.1

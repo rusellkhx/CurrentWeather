@@ -9,5 +9,6 @@ target 'CurrentWeather' do
   #pod 'Firebase/Auth'
   #pod 'Firebase/Database'
   pod 'GooglePlaces'
+  pod 'AAInfographics'
 
 end
