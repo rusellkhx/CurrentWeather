@@ -14,6 +14,7 @@ class CitiesTableViewController: UITableViewController {
     let chartView = AAChartView()
     var networkWeatherManager = NetworkWeatherManager()
     var citiesID: [CurrentModelCitiesID]!
+    
     private var cities: [Cities] = []
     
     override func viewDidLoad() {
@@ -24,12 +25,15 @@ class CitiesTableViewController: UITableViewController {
         createChartView()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
         return citiesID.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CitiesTableViewCell.self), for: indexPath) as! CitiesTableViewCell
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CitiesTableViewCell.self),
+                                                 for: indexPath) as! CitiesTableViewCell
         let city = citiesID[indexPath.row]
         cell.cityLabel.text = city.name
         cell.tempInCity.text = city.temp
@@ -37,11 +41,14 @@ class CitiesTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             citiesID.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             StorageManager.shared.deleteCity(at: indexPath.row)
+            createChartModel(data: citiesID)
         }
     }
     
@@ -61,7 +68,11 @@ extension CitiesTableViewController {
         let chartViewWidth  = self.view.frame.size.width
         let chartViewHeight = 250
         
-        chartView.frame = CGRect(x: 0,y: 0,width: Int(chartViewWidth),height: chartViewHeight)
+        chartView.frame = CGRect(x: 0,
+                                 y: 0,
+                                 width: Int(chartViewWidth),
+                                 height: chartViewHeight)
+        
         chartView.tintColor = .clear
         self.view.addSubview(chartView)
         chartView.isClearBackgroundColor = true
@@ -69,29 +80,27 @@ extension CitiesTableViewController {
     }
     
     private func createChartModel(data: [CurrentModelCitiesID]) {
-        if data.count > 0 {
-        let aaChartModel = AAChartModel()
-            .chartType(.areaspline)
-            .animationType(.bounce)
-            .stacking(.none)
-            .markerSymbol(.circle)
-            .dataLabelsEnabled(true)
-            .tooltipValueSuffix("°")
-            .categories(
-                [data[0].dt])
-            .colorsTheme(["#ffffff","#ffc069"])
-            .series([
-                AASeriesElement()
-                    
-                    .name(data[0].name)
-                    .data([Int(data[0].temp) ?? 0]),
-                AASeriesElement()
-                     .name(data[1].name)
-                     .data([Int(data[1].temp) ?? 0])
-            ])
+        var temp = [Int]()
+        var name = [String]()
+        for item in 0..<data.count {
+            temp.append(Int(data[item].temp) ?? 0)
+            name.append(data[item].name)
+        }
         
-        chartView.aa_drawChartWithChartModel(aaChartModel)
-    }
+            let aaChartModel = AAChartModel()
+                .chartType(.line)
+                .animationType(.easeFrom)
+                .stacking(.normal)
+                .markerSymbol(.circle)
+                .dataLabelsEnabled(true)
+                .tooltipValueSuffix("°")
+                .categories(name)
+                .colorsTheme(["#ffffff"])
+                .series([
+                    AASeriesElement()
+                        .name("All cities")
+                        .data(temp)])
+            chartView.aa_drawChartWithChartModel(aaChartModel)
     }
 }
 
