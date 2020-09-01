@@ -8,21 +8,22 @@
 
 import UIKit
 import CoreLocation
-//import Firebase
 import GooglePlaces
-import AAInfographics
+
+protocol SegueHandler {
+    associatedtype SegueIdentifier: RawRepresentable
+}
+
 class ViewController: UIViewController {
-    
-    // MARK: - User property
-    //var ref: DatabaseReference!
+    // MARK: - User properties
     var networkWeatherManager = NetworkWeatherManager()
     var units: String = "metric" //по умолчанию градусы цельсия
     var city: String = ""
-    let chartView = AAChartView()
     
     private var idCities = ""
     private var citiesID: [CurrentModelCitiesID]?
-    // MARK: - IBOutlet property
+    private var galleryCollectionView = GalleryCollectionView()
+    // MARK: - IBOutlet properties
     @IBOutlet weak var dtLabel: UILabel!
     @IBOutlet weak var backgroungUIImageView: UIImageView!
     @IBOutlet weak var weatherIconImageView: UIImageView!
@@ -35,10 +36,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var keySC: UISegmentedControl!
     @IBOutlet weak var typeUnits: UILabel!
     @IBOutlet weak var dtTime: UILabel!
-    //@IBOutlet weak var chartView: AAChartView!
-    
-    
-    // MARK: - User private/computed property
+
+    // MARK: - User private/computed properties
     lazy var locationManager: CLLocationManager = {
         let lm = CLLocationManager()
         lm.delegate = self //объявили себя делегатом
@@ -46,21 +45,10 @@ class ViewController: UIViewController {
         lm.requestWhenInUseAuthorization() //запрос на разрешение определения местоположения у пользователя
         return lm
     } ()
-    
-    private var galleryCollectionView = GalleryCollectionView()
-    
-    
+    // MARK: - override metods
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SegueCities" {
-            if let citiesTableViewController = segue.destination as? CitiesTableViewController {
-                citiesTableViewController.citiesID = self.citiesID
-            }
-        }
     }
     // MARK: - IBActions
     @IBAction func searchPressed(_ sender: UIButton) {
@@ -75,10 +63,6 @@ class ViewController: UIViewController {
         units = keySC.selectedSegmentIndex == 0 ? "metric" : "imperial"
         self.typeUnits.text = keySC.selectedSegmentIndex == 0 ? "°C" : "°F"
         self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityName(city: self.cityLabel.text!, units: self.units))
-    }
-    
-    @IBAction func takeCitiesByID(_ sender: Any) {
-        
     }
     // MARK: -  @objc
     // Present the Autocomplete view controller when the button is pressed.
@@ -96,50 +80,8 @@ class ViewController: UIViewController {
         
         present(autocompleteController, animated: true, completion: nil)
     }
-    // MARK: - Methods
-    func createChartModel(data: ClockByDayWeather) {
-        let aaChartModel = AAChartModel()
-            .chartType(.line)
-            //.animationType(.bounce)
-            .stacking(.normal)
-            .markerSymbol(.circle)
-            .title("TITLE")//The chart title
-            //.subtitle("subtitle")//The chart subtitle
-            .dataLabelsEnabled(false) //Enable or disable the data labels. Defaults to false
-            .tooltipValueSuffix("°")//the value suffix of the chart tooltip
-            .categories(
-                [data.listStr[0].dt,
-                data.listStr[1].dt,
-                data.listStr[2].dt,
-                data.listStr[3].dt,
-                data.listStr[4].dt,
-                data.listStr[5].dt,
-                data.listStr[6].dt,
-                data.listStr[7].dt,
-                data.listStr[8].dt,
-                data.listStr[9].dt,
-                data.listStr[10].dt]
-        )
-            .series([
-                AASeriesElement()
-                    .name("city")
-                    .data([Int(data.listStr[0].dt) ?? 0,
-                           Int(data.listStr[1].dt) ?? 0,
-                           Int(data.listStr[2].dt) ?? 0,
-                           Int(data.listStr[3].dt) ?? 0,
-                           Int(data.listStr[4].dt) ?? 0,
-                           Int(data.listStr[5].dt) ?? 0,
-                           Int(data.listStr[6].dt) ?? 0,
-                           Int(data.listStr[7].dt) ?? 0,
-                           Int(data.listStr[8].dt) ?? 0,
-                           Int(data.listStr[9].dt) ?? 0,
-                           Int(data.listStr[10].dt) ?? 0])
-            ])
-        
-        chartView.aa_drawChartWithChartModel(aaChartModel)
-    }
     
-    func updateView() {
+    private func updateView() {
         networkWeatherManager.onCompletionCurrentWeather = { [weak self] currentWeather in
             guard let self = self else { return }
             self.updateInterfaceWithCurrentWeather(weather: currentWeather)
@@ -172,19 +114,9 @@ class ViewController: UIViewController {
         getCityGoogle.setTitle("", for: .normal)
         getCityGoogle.addTarget(self, action: #selector(autocompleteClicked), for: .touchUpInside)
         self.view.addSubview(getCityGoogle)
-        
-        let chartViewWidth  = self.view.frame.size.width
-        let chartViewHeight = 100
-        
-        chartView.frame = CGRect(x:0,y:420,width:Int(chartViewWidth),height:chartViewHeight)
-        chartView.tintColor = .none
-        self.view.addSubview(chartView)
-        
-        chartView.isClearBackgroundColor = true
-        chartView.isHidden = true
-    }
+   }
     
-    func updateInterfaceWithCurrentWeather(weather: CurrentWeather) {
+    private func updateInterfaceWithCurrentWeather(weather: CurrentWeather) {
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
             DispatchQueue.main.async {
@@ -204,13 +136,12 @@ class ViewController: UIViewController {
                                       dt: weather.dtStringHourMinute)
                 StorageManager.shared.saveCity(with: citySave)
                 self.idCities = StorageManager.shared.fetchCitiesIdSepareted()
-                print(self.idCities)
                 self.networkWeatherManager.fetchCurrentWeather(forRequestType: .citiesGroupByIDgroup(idCities: self.idCities, units: self.units))
             }
         }
     }
     
-    func updateInterfaceWithClockByDayWeather(weather: ClockByDayWeather) {
+    private func updateInterfaceWithClockByDayWeather(weather: ClockByDayWeather) {
         let queue = DispatchQueue.global(qos: .default)
         queue.async {
             DispatchQueue.main.async {
@@ -218,14 +149,11 @@ class ViewController: UIViewController {
                 self.galleryCollectionView.set(cells: CurrentModel.fetchCurrentWeather(weather))
                 self.galleryCollectionView.isHidden = false
                 self.galleryCollectionView.reloadData()
-                
-                self.createChartModel(data: weather)
-                self.chartView.isHidden = false
             }
         }
     }
     
-    func changeBackground(_ code: String) -> UIImage {
+    private func changeBackground(_ code: String) -> UIImage {
         switch code {
         case "cloud.bolt.rain.fill": return UIImage(assetIdentifier: .tunderstorm)!
         case "cloud.drizzle.fill": return UIImage(assetIdentifier: .drizzle)!
@@ -238,7 +166,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateInterfaceWithCitiesGroupByID(weather: CitiesGroupByID) {
+    private func updateInterfaceWithCitiesGroupByID(weather: CitiesGroupByID) {
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
             DispatchQueue.main.async {
@@ -281,7 +209,36 @@ extension ViewController: CLLocationManagerDelegate, GMSAutocompleteViewControll
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
+extension ViewController: SegueHandler {
+    
+    enum SegueIdentifier: String {
+        case signIn, signUp
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segueIdentifier(for: segue) {
+        case .signIn:
+            if let citiesTableViewController = segue.destination as? CitiesTableViewController {
+                citiesTableViewController.citiesID = self.citiesID
+            }
+        case .signUp:
+            print("signUp")
+        }
+    }
+}
 
+extension SegueHandler where Self: UIViewController, SegueIdentifier.RawValue == String {
+
+    func performSegue(withIdentifier segueIdentifier: SegueIdentifier, sender: AnyObject?) {
+        performSegue(withIdentifier: segueIdentifier.rawValue, sender: sender)
+    }
+
+    func segueIdentifier(for segue: UIStoryboardSegue) -> SegueIdentifier {
+        guard let identifier = segue.identifier, let identifierCase = SegueIdentifier(rawValue: identifier) else {
+            fatalError("Invalid segue identifier \(String(describing: segue.identifier)).")
+        }
+        return identifierCase
+    }
+}

@@ -244,7 +244,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="qcJ-vK-b2Q">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="dWX-m8-32B" kind="show" identifier="SegueCities" id="pB3-V7-DJt"/>
+                                <segue destination="dWX-m8-32B" kind="show" identifier="signIn" id="pB3-V7-DJt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -278,25 +278,13 @@
                         <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Z0E-g7-QSb">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="174"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ny" translatesAutoresizingMaskIntoConstraints="NO" id="otE-nG-QIF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="174"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                </imageView>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="otE-nG-QIF" secondAttribute="trailing" id="3Mr-4E-0HI"/>
-                                <constraint firstItem="otE-nG-QIF" firstAttribute="top" secondItem="Z0E-g7-QSb" secondAttribute="top" id="7Px-pw-imO"/>
-                                <constraint firstAttribute="bottom" secondItem="otE-nG-QIF" secondAttribute="bottom" id="V6a-zv-xM2"/>
-                                <constraint firstItem="otE-nG-QIF" firstAttribute="leading" secondItem="Z0E-g7-QSb" secondAttribute="leading" id="caX-LZ-3JA"/>
-                            </constraints>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="1" shouldIndentWhileEditing="NO" reuseIdentifier="cellCities" rowHeight="85" id="fs7-H4-rBX" customClass="CitiesTableViewCell" customModule="CurrentWeather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="202" width="375" height="85"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="1" shouldIndentWhileEditing="NO" reuseIdentifier="CitiesTableViewCell" rowHeight="85" id="fs7-H4-rBX" customClass="CitiesTableViewCell" customModule="CurrentWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="278" width="375" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fs7-H4-rBX" id="upY-Gv-jaA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
@@ -393,7 +381,6 @@
     <resources>
         <image name="background" width="375" height="667"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="ny" width="736" height="1103"/>
         <namedColor name="infoColor">
             <color red="0.95099997520446777" green="1" blue="0.66900002956390381" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

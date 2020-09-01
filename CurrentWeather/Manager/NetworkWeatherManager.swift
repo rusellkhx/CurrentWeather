@@ -91,6 +91,7 @@ class NetworkWeatherManager {
             }
             return currentWeather
         } catch let error as NSError {
+            
             print(error.localizedDescription)
         }
         return nil
@@ -126,3 +127,5 @@ class NetworkWeatherManager {
         return nil
     }
 }
+
+

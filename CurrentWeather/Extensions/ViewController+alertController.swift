@@ -38,4 +38,14 @@ extension ViewController {
             alert.addAction(okAction)
             present(alert, animated: true)
     }
+    
+    func showError(text:String) {
+        let alert = UIAlertController(title: "Упс...", message: text, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(ok)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
 }
