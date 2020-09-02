@@ -12,7 +12,7 @@ import AAInfographics
 class CitiesTableViewController: UITableViewController {
     
     let chartView = AAChartView()
-    var networkWeatherManager = NetworkWeatherManager()
+    
     var citiesID: [CurrentModelCitiesID]!
     
     private var cities: [Cities] = []

@@ -16,7 +16,7 @@ protocol SegueHandler {
 
 class ViewController: UIViewController {
     // MARK: - User properties
-    var networkWeatherManager = NetworkWeatherManager()
+    
     var units: String = "metric" //по умолчанию градусы цельсия
     var city: String = ""
     
@@ -54,15 +54,15 @@ class ViewController: UIViewController {
     @IBAction func searchPressed(_ sender: UIButton) {
         self.presentSearchAlertController(withTitle: "Enter city name", message: nil, style: .alert) { [unowned self] city in
             
-            self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityName(city: city, units: self.units))
-            self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityNameMoreInfo(city: city, units: self.units))
+            NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityName(city: city, units: self.units))
+            NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityNameMoreInfo(city: city, units: self.units))
         }
     }
     
     @IBAction func selectedSC(_ sender: UISegmentedControl) {
         units = keySC.selectedSegmentIndex == 0 ? "metric" : "imperial"
         self.typeUnits.text = keySC.selectedSegmentIndex == 0 ? "°C" : "°F"
-        self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityName(city: self.cityLabel.text!, units: self.units))
+        NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityName(city: self.cityLabel.text!, units: self.units))
     }
     // MARK: -  @objc
     // Present the Autocomplete view controller when the button is pressed.
@@ -82,16 +82,16 @@ class ViewController: UIViewController {
     }
     
     private func updateView() {
-        networkWeatherManager.onCompletionCurrentWeather = { [weak self] currentWeather in
+        NetworkWeatherManager.shared.onCompletionCurrentWeather = { [weak self] currentWeather in
             guard let self = self else { return }
             self.updateInterfaceWithCurrentWeather(weather: currentWeather)
         }
-        networkWeatherManager.onCompletionClockByDayWeather = { [weak self] clockByDayWeather in
+        NetworkWeatherManager.shared.onCompletionClockByDayWeather = { [weak self] clockByDayWeather in
             guard let self = self else { return }
             self.updateInterfaceWithClockByDayWeather(weather: clockByDayWeather)
         }
         
-        networkWeatherManager.onCompletionCitiesGroupByID = { [weak self] citiesGroupByID in
+        NetworkWeatherManager.shared.onCompletionCitiesGroupByID = { [weak self] citiesGroupByID in
             guard let self = self else { return }
             self.updateInterfaceWithCitiesGroupByID(weather: citiesGroupByID)
         }
@@ -136,7 +136,7 @@ class ViewController: UIViewController {
                                       dt: weather.dtStringHourMinute)
                 StorageManager.shared.saveCity(with: citySave)
                 self.idCities = StorageManager.shared.fetchCitiesIdSepareted()
-                self.networkWeatherManager.fetchCurrentWeather(forRequestType: .citiesGroupByIDgroup(idCities: self.idCities, units: self.units))
+                NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .citiesGroupByIDgroup(idCities: self.idCities, units: self.units))
             }
         }
     }
@@ -183,7 +183,7 @@ extension ViewController: CLLocationManagerDelegate, GMSAutocompleteViewControll
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude
         
-        networkWeatherManager.fetchCurrentWeather(forRequestType: .coordinate(latitude: latitude, longititude: longitude, units: self.units))
+        NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .coordinate(latitude: latitude, longititude: longitude, units: self.units))
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -196,8 +196,8 @@ extension ViewController: CLLocationManagerDelegate, GMSAutocompleteViewControll
             self.city = city
         }
         
-        self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityName(city: self.city, units: self.units))
-        self.networkWeatherManager.fetchCurrentWeather(forRequestType: .cityNameMoreInfo(city: self.city, units: self.units))
+        NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityName(city: self.city, units: self.units))
+        NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityNameMoreInfo(city: self.city, units: self.units))
         
         dismiss(animated: true, completion: nil)
     }

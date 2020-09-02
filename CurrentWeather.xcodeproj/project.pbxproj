@@ -80,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4251C8D624FF820F00D3EF94 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				42A9B20E24E931E90028CBCB /* Main.storyboard */,
+				42A9B21324E931EB0028CBCB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		428CF4ED24E9336100116531 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,9 +131,6 @@
 			children = (
 				42A9B20C24E931E90028CBCB /* ViewController.swift */,
 				428CF50324E9358600116531 /* CitiesTableViewController.swift */,
-				428CF50524E935D200116531 /* GalleryCollectionView.swift */,
-				428CF50724E935EC00116531 /* GalleryCollectionViewCell.swift */,
-				428CF50924E9367A00116531 /* CitiesTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,6 +163,7 @@
 				42A9B21C24E932790028CBCB /* Extensions */,
 				428CF4ED24E9336100116531 /* Supporting files */,
 				42A9B22124E932F40028CBCB /* Views */,
+				4251C8D624FF820F00D3EF94 /* Storyboards */,
 			);
 			path = CurrentWeather;
 			sourceTree = "<group>";
@@ -173,8 +180,9 @@
 		42A9B22124E932F40028CBCB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				42A9B20E24E931E90028CBCB /* Main.storyboard */,
-				42A9B21324E931EB0028CBCB /* LaunchScreen.storyboard */,
+				428CF50524E935D200116531 /* GalleryCollectionView.swift */,
+				428CF50724E935EC00116531 /* GalleryCollectionViewCell.swift */,
+				428CF50924E9367A00116531 /* CitiesTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

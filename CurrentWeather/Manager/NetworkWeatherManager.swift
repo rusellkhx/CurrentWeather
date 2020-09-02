@@ -11,6 +11,9 @@ import CoreLocation
 
 class NetworkWeatherManager {
     
+    static let shared = NetworkWeatherManager()
+    private init() {}
+    
     enum RequestType {
         case cityName(city: String, units: String)
         case coordinate(latitude: CLLocationDegrees, longititude: CLLocationDegrees, units: String)
@@ -42,7 +45,7 @@ class NetworkWeatherManager {
         
     }
 
-    fileprivate func performReqestWeather(withURLString urlString: String) {
+    func performReqestWeather(withURLString urlString: String) {
         guard let url = URL(string: urlString) else { return }
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
@@ -55,7 +58,7 @@ class NetworkWeatherManager {
             task.resume()
     }
     
-    fileprivate func performReqestWeatherCitiesGroupByID(withURLString urlString: String) {
+    func performReqestWeatherCitiesGroupByID(withURLString urlString: String) {
         guard let url = URL(string: urlString) else { return }
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
@@ -69,7 +72,7 @@ class NetworkWeatherManager {
             task.resume()
     }
     
-    fileprivate func performReqestForecast(withURLString urlString: String) {
+    func performReqestForecast(withURLString urlString: String) {
             guard let url = URL(string: urlString) else { return }
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
@@ -82,7 +85,7 @@ class NetworkWeatherManager {
             task.resume()
     }
     
-    fileprivate func parseJSON(withData data: Data) -> CurrentWeather? {
+    func parseJSON(withData data: Data) -> CurrentWeather? {
         let decoder = JSONDecoder()
         do {
             let currentWeatherData = try decoder.decode(CurrentWeatherData.self, from: data)
@@ -97,7 +100,7 @@ class NetworkWeatherManager {
         return nil
     }
     
-    fileprivate func parseJSON_2(withData data: Data) -> ClockByDayWeather? {
+    func parseJSON_2(withData data: Data) -> ClockByDayWeather? {
         let decoder = JSONDecoder()
         do {
             let clockByDayWeatherData = try decoder.decode(ClockByDayWeatherData.self, from: data)
@@ -112,7 +115,7 @@ class NetworkWeatherManager {
         return nil
     }
     
-    fileprivate func parseJSONCitiesGroupByID(withData data: Data) -> CitiesGroupByID? {
+    func parseJSONCitiesGroupByID(withData data: Data) -> CitiesGroupByID? {
         let decoder = JSONDecoder()
         do {
             let citiesGroupByIDdata = try decoder.decode(ClockByDayWeatherData2.self, from: data)
