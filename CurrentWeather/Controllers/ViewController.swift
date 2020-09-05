@@ -53,16 +53,35 @@ class ViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func searchPressed(_ sender: UIButton) {
         self.presentSearchAlertController(withTitle: "Enter city name", message: nil, style: .alert) { [unowned self] city in
-            
-            NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityName(city: city, units: self.units))
-            NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityNameMoreInfo(city: city, units: self.units))
+           
+            NetworkWeatherManager.shared.performReqestWeather(urlString: .cityName(city: city, units: self.units)) { (currentweather, error) in
+                
+                guard let currentweather = currentweather else {
+                    DispatchQueue.main.async {
+                            self.showError(text: "Ooopss!")
+                    }
+                return }
+                self.updateInterfaceWithCurrentWeather(weather: currentweather)
+                
+            }
+
+            NetworkWeatherManager.shared.performReqestForecast(urlString: .cityNameMoreInfo(city: city, units: self.units)) { (clockByDayWeather, error) in
+                
+                guard let clockByDayWeather = clockByDayWeather else {
+                    DispatchQueue.main.async {
+                            self.showError(text: "Ooopss!")
+                    }
+                return }
+                self.updateInterfaceWithClockByDayWeather(weather: clockByDayWeather)
+                
+            }
         }
     }
     
     @IBAction func selectedSC(_ sender: UISegmentedControl) {
         units = keySC.selectedSegmentIndex == 0 ? "metric" : "imperial"
         self.typeUnits.text = keySC.selectedSegmentIndex == 0 ? "°C" : "°F"
-        NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityName(city: self.cityLabel.text!, units: self.units))
+        //NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityName(city: self.cityLabel.text!, units: self.units))
     }
     // MARK: -  @objc
     // Present the Autocomplete view controller when the button is pressed.
@@ -82,18 +101,13 @@ class ViewController: UIViewController {
     }
     
     private func updateView() {
-        NetworkWeatherManager.shared.onCompletionCurrentWeather = { [weak self] currentWeather in
-            guard let self = self else { return }
-            self.updateInterfaceWithCurrentWeather(weather: currentWeather)
-        }
-        NetworkWeatherManager.shared.onCompletionClockByDayWeather = { [weak self] clockByDayWeather in
-            guard let self = self else { return }
-            self.updateInterfaceWithClockByDayWeather(weather: clockByDayWeather)
-        }
-        
-        NetworkWeatherManager.shared.onCompletionCitiesGroupByID = { [weak self] citiesGroupByID in
-            guard let self = self else { return }
-            self.updateInterfaceWithCitiesGroupByID(weather: citiesGroupByID)
+        NetworkWeatherManager.shared.performReqestWeather(urlString: .cityName(city: self.city, units: self.units)) { (currentweather, error) in
+            guard let currentweather = currentweather else {
+                    DispatchQueue.main.async {
+                    self.showError(text: "Ooopss!")
+            }
+            return }
+            self.updateInterfaceWithCurrentWeather(weather: currentweather)
         }
         
         // проверка включенности определения местоположения
@@ -116,7 +130,7 @@ class ViewController: UIViewController {
         self.view.addSubview(getCityGoogle)
    }
     
-    private func updateInterfaceWithCurrentWeather(weather: CurrentWeather) {
+    func updateInterfaceWithCurrentWeather(weather: CurrentWeather) {
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
             DispatchQueue.main.async {
@@ -136,7 +150,18 @@ class ViewController: UIViewController {
                                       dt: weather.dtStringHourMinute)
                 StorageManager.shared.saveCity(with: citySave)
                 self.idCities = StorageManager.shared.fetchCitiesIdSepareted()
-                NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .citiesGroupByIDgroup(idCities: self.idCities, units: self.units))
+                
+                NetworkWeatherManager.shared.performReqestWeatherCitiesGroupByID(urlString: .citiesGroupByIDgroup(idCities: self.idCities, units: self.units)) { (citiesGroupByID, error) in
+                    
+                    guard let citiesGroupByID = citiesGroupByID else {
+                        DispatchQueue.main.async {
+                                self.showError(text: "Ooopss!")
+                        }
+                    return }
+                    self.updateInterfaceWithCitiesGroupByID(weather: citiesGroupByID)
+                    
+                }
+                
             }
         }
     }
@@ -179,16 +204,25 @@ class ViewController: UIViewController {
 // MARK: - Extensions, Protocols
 extension ViewController: CLLocationManagerDelegate, GMSAutocompleteViewControllerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return self.showAlert(with: "Ошибка!", and: "Нет данных по координатам") }
+        guard let location = locations.last else { return self.showAlert(with: "Error!",
+                                                                         and: "No data for coordinates") }
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude
         
-        NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .coordinate(latitude: latitude, longititude: longitude, units: self.units))
+        NetworkWeatherManager.shared.performReqestWeather(urlString: .coordinate(latitude: latitude, longititude: longitude,
+                                                          units: self.units)) { (currentweather, error) in
+            guard let currentweather = currentweather else {
+                    DispatchQueue.main.async {
+                    self.showError(text: "Ooopss!")
+            }
+            return }
+            self.updateInterfaceWithCurrentWeather(weather: currentweather)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        self.showAlert(with: "Ошибка!", and: "Нет данных по координатам")
-        print(error.localizedDescription)
+        self.showAlert(with: "Error!",
+                       and: "No data for coordinates")
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
@@ -196,14 +230,11 @@ extension ViewController: CLLocationManagerDelegate, GMSAutocompleteViewControll
             self.city = city
         }
         
-        NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityName(city: self.city, units: self.units))
-        NetworkWeatherManager.shared.fetchCurrentWeather(forRequestType: .cityNameMoreInfo(city: self.city, units: self.units))
-        
         dismiss(animated: true, completion: nil)
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        print("Error: ", error.localizedDescription)
+        //print("Error: ", error.localizedDescription)
     }
     
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {

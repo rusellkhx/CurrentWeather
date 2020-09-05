@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4216944C24FFA9CE007A5A97 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216944B24FFA9CE007A5A97 /* Error.swift */; };
 		425273F124F11119009FD1A0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 425273F024F11119009FD1A0 /* .gitignore */; };
 		425273F324F11474009FD1A0 /* CitiesGroupByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425273F224F11474009FD1A0 /* CitiesGroupByID.swift */; };
 		425273F524F13243009FD1A0 /* ClockByDayWeatherData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425273F424F13243009FD1A0 /* ClockByDayWeatherData2.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		2A11A7FFA1ECBBC1BFBAAC70 /* Pods-CurrentWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrentWeather.release.xcconfig"; path = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather.release.xcconfig"; sourceTree = "<group>"; };
 		3632A15A83A790EF024D98A6 /* Pods-CurrentWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrentWeather.debug.xcconfig"; path = "Target Support Files/Pods-CurrentWeather/Pods-CurrentWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		4216944B24FFA9CE007A5A97 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		425273F024F11119009FD1A0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		425273F224F11474009FD1A0 /* CitiesGroupByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesGroupByID.swift; sourceTree = "<group>"; };
 		425273F424F13243009FD1A0 /* ClockByDayWeatherData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockByDayWeatherData2.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				425273F224F11474009FD1A0 /* CitiesGroupByID.swift */,
 				425273F424F13243009FD1A0 /* ClockByDayWeatherData2.swift */,
 				425273F624F1576C009FD1A0 /* StructModelCitiesID.swift */,
+				4216944B24FFA9CE007A5A97 /* Error.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				428CF4F224E933B800116531 /* StorageManager.swift in Sources */,
 				428CF4F724E9345D00116531 /* CurrentWeatherData.swift in Sources */,
 				428CF50A24E9367A00116531 /* CitiesTableViewCell.swift in Sources */,
+				4216944C24FFA9CE007A5A97 /* Error.swift in Sources */,
 				428CF4FB24E934AA00116531 /* Cities.swift in Sources */,
 				428CF4F924E9347900116531 /* StructMiniModelWeather.swift in Sources */,
 				428CF4F024E9339300116531 /* NetworkWeatherManager.swift in Sources */,
