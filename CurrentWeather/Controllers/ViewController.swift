@@ -101,15 +101,6 @@ class ViewController: UIViewController {
     }
     
     private func updateView() {
-        NetworkWeatherManager.shared.performReqestWeather(urlString: .cityName(city: self.city, units: self.units)) { (currentweather, error) in
-            guard let currentweather = currentweather else {
-                    DispatchQueue.main.async {
-                    self.showError(text: "Ooopss!")
-            }
-            return }
-            self.updateInterfaceWithCurrentWeather(weather: currentweather)
-        }
-        
         // проверка включенности определения местоположения
         if CLLocationManager.locationServicesEnabled() {
             locationManager.requestLocation()
@@ -208,11 +199,12 @@ extension ViewController: CLLocationManagerDelegate, GMSAutocompleteViewControll
                                                                          and: "No data for coordinates") }
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude
+        let deadlineTime = DispatchTime.now() + 0.5
         
         NetworkWeatherManager.shared.performReqestWeather(urlString: .coordinate(latitude: latitude, longititude: longitude,
                                                           units: self.units)) { (currentweather, error) in
             guard let currentweather = currentweather else {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
                     self.showError(text: "Ooopss!")
             }
             return }
