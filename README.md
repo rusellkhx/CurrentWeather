@@ -8,3 +8,6 @@ This test project includes the following iOS pods like:
   - AAInfographics (drawing a graph of the current temperature according to the history of cities previously requested)
 ## API
 This test project uses open (need apiKey) API: https://api.openweathermap.org/
+
+## Result
+(https://github.com/rusellkhx/Images/master/HistoryWeatherForCity.png)
