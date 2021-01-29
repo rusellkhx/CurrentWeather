@@ -10,4 +10,4 @@ This test project includes the following iOS pods like:
 This test project uses open (need apiKey) API: https://api.openweathermap.org/
 
 ## Result
-(https://github.com/rusellkhx/Images/master/HistoryWeatherForCity.png)
+(https://github.com/rusellkhx/Images/HistoryWeatherForCity.png)
