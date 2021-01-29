@@ -12,5 +12,5 @@ This test project uses open (need apiKey) API: https://api.openweathermap.org/
 ## Result
 
 ![Image1](https://github.com/rusellkhx/Images/blob/master/CurrencyWeatherForCity2.png)
-![Image2](https://github.com/rusellkhx/Images/blob/master/CurrencyWeatherForCity.png)
+![Image2](https://github.com/rusellkhx/Images/blob/master/HistoryWeatherForCity.png)
 ![Image3](https://github.com/rusellkhx/Images/blob/master/HistoryCurrencyWeatherForCity_funcDelete.png)
