@@ -11,6 +11,6 @@ This test project uses open (need apiKey) API: https://api.openweathermap.org/
 
 ## Result
 
-<img src="https://github.com/rusellkhx/Images/blob/master/CurrencyWeatherForCity2.png"/>
+<img src="https://raw.githubusercontent.com/rusellkhx/Images/main/CurrencyWeatherForCity2.png"/>
 
 
