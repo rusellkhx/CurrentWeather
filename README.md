@@ -15,7 +15,11 @@ This test project uses open (need apiKey) API: https://api.openweathermap.org/
   <tr>
     <td>
       <img src="https://raw.githubusercontent.com/rusellkhx/Images/main/CurrencyWeatherForCity2.png"/>
+    </td>
+        <td>
       <img src="https://raw.githubusercontent.com/rusellkhx/Images/main/HistoryWeatherForCity.png"/>
+    </td>
+       <td>
       <img src="https://raw.githubusercontent.com/rusellkhx/Images/main/HistoryCurrencyWeatherForCity_funcDelete.png"/>
     </td>
   </tr>
